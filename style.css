@@ -274,3 +274,106 @@
   
 }
 
+/* Contact page */
+.div-container{
+  background-color:#c4c4c4;
+  display:flex;
+  flex-direction:row-reverse;
+}
+
+.container2{
+  height:100vh;
+  width: 50%;
+  background-color:#4b1a41;
+}
+.contact-form{
+  display: flex;
+  justify-items: center;
+  flex-direction: row;
+  height: 500px;
+  width:900px;
+  color:#000000;
+  margin-left: -370px;
+  background-color:#ffffff;
+  margin-top: 50px;
+}
+
+.contact-info{
+    height: 400px;
+    width:400px;
+    margin-left: -180px;
+  background-color:#4b1a41;
+  margin-top: 50px;
+}
+
+.awesome {
+  margin-top: 40px;
+  margin-left:20px;
+  color:#ffffff;
+  font-size:25px;
+  opacity: 0.8;
+}
+.awesome i{
+  margin-right:30px;
+  margin-top: 15px;
+}
+
+.awesome-social{
+  margin-left:20px;
+  font-size:40px;
+  margin-top: 105px;
+  color:#ffffff;
+}
+.awesome-social i{
+  padding-left:10px;
+  opacity: 0.8;
+}
+.div-form {
+  margin-left: 40px;
+  margin-top: 50px;
+}
+ 
+#fname, #lname,
+#email, #phone-number
+{
+  font-size: 16px;
+  
+  border:none;
+    border-bottom: 1px solid black;
+    padding-top: 40px;
+    outline: none;
+}
+.pmessage{
+  margin-top:20px;
+}
+#message{
+  font-size: 16px;
+  
+  border:none;
+    border-bottom: 1px solid black;
+    margin-top: 20px;
+    padding: 1px 140px;
+    outline: none;
+}
+
+.inputdiv-container{
+  display:flex;
+  flex-direction:row;
+}
+
+.first-iniputdiv{
+  
+}
+.second-iniputdiv{
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+
+#button-send{
+  font-size:20px;
+  margin-top: 20px;
+  width: 120px;
+  height:40px ;
+  color:#ffffff;
+  background-color:#4b1a41
+}
