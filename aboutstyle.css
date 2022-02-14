@@ -1,112 +1,251 @@
-
 /* About page css */
-.about-container{
-                background-color:#000000;
-                color:#ffffff;
-                width: 100%;
-                height:max-content;
-                margin-top: 60px;
-              }
-              .professional-infoB {
-                display: flex;
-                flex-direction: row;
-                width:100%;
-                height: 450px;
-              
-              }
-              .me-profesionalB {
-                margin-left: 160px;
-                margin-top:40px;
-              }
-              .me-profesionalB p{
-                color:#ffffff;
-                font-size: 25px;
-                width:80%;
-                opacity: 0.8;
-              }
-              .me-profesionalB h1{
-                color:#ffe06a;
-                opacity: 0.8;
-              }
-              .me-profesionalB button{
-                background-color: #ffe06a;
-                color: #000000;
-                margin-top: 15px;
-                font-size: 20px;
-                font-weight: bold;
-                border: 1px solid;
-                border-radius: 50px;
-                border-color: black;
-                height: 40px;
-                width: 220px;
-              }
-              .me-imageB{
-                background-color: inherit;
-                height: 300px;
-                width: 25%;
-                margin-left: 120px;
-                border-left: 10px solid;
-                border-bottom: 10px solid;
-                border-color: #4b1a41;
-                margin-top: 50px;
-              }
-              .me-imageB img{
-                padding-left: 15px;
-                height: 280px;
-                width: 300px;
-              }
-              
-              .skills-infoB{
-                margin-top: 20px;
-                margin-left: 120px;
-              }
-              
-              .skills-infoB h1{
-                opacity: 0.8;
-              }
-              
-              .me-experiencelB{
-                margin-top: 40px;
-                margin-left: 120px;
-                margin-right: 120px;
-                border: 3px solid;
-                border-color:#ffe06a ;
-              }
-              .me-experiencelB h1{
-                opacity: 0.8;
-              }
-              
-              .experiance1{
-                opacity: 0.8;
-              }
-              .experiance2{
-                border-top: 0.5px solid;
-                border-color:#ffffff;
-                opacity: 0.8;
-              }
-              .job-infoB{
-                display:flex;
-                flex-direction: row;
-              }
-              .job-titleB{
-                font-size: 25px;
-                color: #ffe06a;
-              }
-              .job-titleB p, li{
-                font-size: 20px;
-              }
-              .job-dateB{
-                padding-left: 150px;
-                padding-top: 10px;
-                font-size:20px
-              }
-              .get-in-touch {
-                margin-left:120px;
-                margin-top: 20px;
-                
-              }
-              
-              .get-in-touch p{
-                font-size: 20px;
-                
-              }
+
+body{
+  height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+.about-container {
+  background-color: #000000;
+  color: #ffffff;
+  width: 100%;
+  height: max-content;
+  margin-top: 60px;
+}
+.professional-infoB {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 450px;
+}
+.me-profesionalB {
+  margin-left: 160px;
+  margin-top: 40px;
+}
+.me-profesionalB p {
+  color: #ffffff;
+  font-size: 20px;
+  width: 80%;
+  opacity: 0.8;
+}
+.me-profesionalB h1 {
+  color: #ffe06a;
+  opacity: 0.8;
+}
+.me-profesionalB button {
+  background-color: #ffe06a;
+  color: #000000;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 50px;
+  border-color: black;
+  height: 40px;
+  width: 220px;
+}
+.me-imageB {
+  background-color: inherit;
+  height: 300px;
+  width: 25%;
+  margin-left: 120px;
+  border-left: 10px solid;
+  border-bottom: 10px solid;
+  border-color: #4b1a41;
+  margin-top: 50px;
+}
+.me-imageB-respo{
+  display: none;
+}
+.me-imageB img {
+  padding-left: 5px;
+  height: 280px;
+  width: 300px;
+}
+
+.skills-infoB {
+  /* background-color:blueviolet; */
+  margin-top: 0px;
+  margin-left: 50px;
+}
+
+.skills-infoB h1 {
+  padding-top:0px ;
+  opacity: 0.8;
+}
+
+.skills-icon-container{
+  display: flex;
+  flex-direction: row;
+}
+.skills-icon1{
+  margin-left:10px;
+  
+}
+.skills-icon2{
+  margin-left:50px;
+  
+}
+.skills-icon{
+  display: flex;
+  flex-direction: row;
+  font-size:20px;
+  
+}
+.skills-icon i{
+  color: #ffe06a;
+  font-size: 40px;
+}
+.skills-icon p{
+  padding-left:10%;
+}
+
+.me-experiencelB {
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-bottom: 20px;
+  border: 3px solid;
+  border-color: #ffe06a;
+}
+.me-experiencelB h1 {
+  opacity: 0.8;
+}
+
+.experiance1 {
+  opacity: 0.8;
+}
+.experiance2 {
+  border-top: 0.5px solid;
+  border-color: #ffffff;
+  opacity: 0.8;
+}
+.experiance2 h2, .experiance1 h2{
+  font-size: 25px;
+  color: #ffe06a;
+}
+.job-infoB {
+  display: flex;
+  flex-direction: row;
+}
+
+.job-titleB {
+  font-size: 25px;
+  color: #ffe06a;
+}
+.job-titleB p,
+li {
+  font-size: 20px;
+}
+.job-dateB {
+  padding-left: 150px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 960px) {
+  .about-container {
+    margin-top: 0px;
+  }
+  .professional-infoB {
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+    height: auto;
+  }
+  .me-profesionalB {
+    margin-left: 20px;
+   
+  }
+  .me-profesionalB p {
+    color: #ffffff;
+    font-size: 20px;
+    width: 80%;
+    opacity: 0.8;
+  }
+  .me-profesionalB h1 {
+    color: #ffe06a;
+    opacity: 0.8;
+  }
+  .me-profesionalB button {
+    background-color: #ffe06a;
+    color: #000000;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 50px;
+    border-color: black;
+    height: 40px;
+    width: 220px;
+  }
+  .me-imageB {
+    display: none;
+  }
+  .me-imageB-respo{
+    display: flex;
+    margin-left: 5%;
+    
+  }
+  .me-imageB-respo img {
+    padding-left: 15px;
+    height: 280px;
+    width: 300px;
+  }
+  
+  .skills-infoB {
+    /* background-color:blueviolet; */
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .skills-infoB h1 {
+    padding-top:50px ;
+    opacity: 0.8;
+  }
+  
+  .me-experiencelB {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 3px solid;
+    border-color: #ffe06a;
+  }
+  .me-experiencelB h1 {
+    opacity: 0.8;
+  }
+  
+  .experiance1 {
+    opacity: 0.8;
+  }
+  .experiance2 {
+    border-top: 0.5px solid;
+    border-color: #ffffff;
+    opacity: 0.8;
+  }
+  .job-infoB {
+    display: flex;
+    flex-direction: row;
+  }
+  .job-titleB {
+    font-size: 25px;
+    color: #ffe06a;
+  }
+  .job-titleB p,
+  li {
+    font-size: 20px;
+  }
+  .job-dateB {
+    padding-left: 20px;
+    font-size: 20px;
+  }
+  .get-in-touch {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  
+  .get-in-touch p {
+    font-size: 20px;
+  }
+}
