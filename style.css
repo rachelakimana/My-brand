@@ -8,7 +8,7 @@
   align-items: center;
   position: fixed;
   top: 0;
-  background-color: #ffffff;
+  background-color: white;
 }
 .nav-mobile{
   display: none;
@@ -38,7 +38,7 @@
 }
 
 .profile-info {
-  margin-top:60px;
+  padding-top: 4%;
   background-color: #4b1a41;
   display: flex;
   overflow: auto;
@@ -68,8 +68,8 @@
 }
 .me-image {
   background-color: inherit;
-  height: 320px;
-  width: 23%;
+  height: 310px;
+  width: 20%;
   /* margin-right: 90px; */
   border-left: 10px solid;
   border-bottom: 10px solid;
@@ -85,14 +85,14 @@
 
 .about-container {
   width: 100%;
-  background-color: #000000;
+  background-color: #c4c4c4;
 }
 .about-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: #000000;
 }
 .about-info p {
   width: 75%;
@@ -106,14 +106,13 @@
   font-size: 30px;
   text-decoration: none;
 
-  color: #ffe06a;
+  color: #000000;
 }
 .about-info button {
-  background-color: #ffe06a;
-  color: #000000;
+  background-color: #4b1a41;
+  color: white;
   margin-top: 15px;
   font-size: 20px;
-  font-weight: bold;
   border: 1px solid;
   border-radius: 50px;
   border-color: black;
@@ -126,17 +125,17 @@
   font-size: 20px;
   height: 30px;
   width: 100px;
-  margin-left: 70px;
+  margin-left: 30px;
   border-left: 2px solid;
   border-bottom: 2px solid;
-  border-color: #ffe06a;
+  border-color: #000000;
   font-size: 20px;
   margin-top: 30px;
 }
 .p-servise p {
   font-size: 25px;
   padding-left: 12px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .services-container {
@@ -151,7 +150,7 @@
   color: #000000;
   margin-left: 30px;
   margin-bottom: 30px;
-  background-color: #c4c4c4;
+  background-color: white;
   width: 30%;
   height: auto;
 }
@@ -165,7 +164,7 @@
   transform: translate(-50%, -50%);
   top: 75%;
   left: 50%;
-  color: #ffe06a;
+  color: white;
   font-size: 20px;
   width: 100%;
 }
