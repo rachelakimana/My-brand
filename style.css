@@ -30,11 +30,12 @@
   font-size: 30px;
   color: #000000;
   text-decoration: none;
-  padding-left: 60px;
+  margin-left: 60px;
 }
 
 .nav-menu a:hover{
-  color:#ffe06a;
+  background-color:#4b1a41;
+  color: white;
 }
 
 .profile-info {
@@ -235,11 +236,13 @@
   .profile-info {
     width: 100%;
     height: 300px;
+    padding-top: 30px;
   }
   .me-info {
     margin-left: 50px;
     color: #ffffff;
     width: 40%;
+    padding-top: 20px;
   }
   .me-info button {
     margin-top: 30px;
@@ -291,14 +294,14 @@
     margin-left: 30px;
     border-left: 2px solid;
     border-bottom: 2px solid;
-    border-color: #ffe06a;
+    /* border-color: #ffe06a; */
     font-size: 20px;
     margin-top: 30px;
   }
   .p-servise p {
     font-size: 20px;
     padding-left: 5px;
-    color: #ffffff;
+    color: #000000;
   }
   .services-container {
     /* background-color:aquamarine; */
@@ -317,7 +320,7 @@
     transform: translate(-50%, -50%);
     top: 75%;
     left: 50%;
-    color: #ffe06a;
+    color: white;
     font-size: 20px;
     width: 100%;
   }
@@ -341,17 +344,16 @@
     display:flex;
     width: 100%;
     height:60px;
-    /* background-color:#ffe06a  */
   }
   .nav-mobile-menu{
-    /* background-color: red; */
+   
     width: 25%;
     display:flex; 
     align-items: center;
     justify-content: left;
   }
   .nav-mobile-h1{
-    /* background-color: green;  */
+   
     width: 75%; display:flex; 
     align-items: center; 
     justify-content: right;
@@ -381,11 +383,11 @@
     margin-top: 10px;
     margin-right: 10px;
     border: 1px solid white;
-    font-size: px;
+    font-size:18 px;
     text-decoration: none;
   }
   .pop-menu-content  > a:hover{
-    color:#ffe06a;
+    font-size:25px ;
   }
   
   .profile-info {
@@ -397,11 +399,11 @@
     justify-content:start;
     width: 100%;
     height: 620px;
+    
   }
   .me-info {
     margin-top:0px;
     margin-left: 30px;
-    color: #ffffff;
     width: 80%;
   }
   .me-info button {
@@ -410,9 +412,8 @@
     font-size: 20px;
     height: 35px;
     width: 120px;
-    color: #ffffff;
     border: 1px solid;
-    border-color: #ffffff;
+  
   }
   .me-info p {
     font-size: 25px;
@@ -437,14 +438,14 @@
   
   .about-container {
     width: 100%;
-    background-color: #000000;
+   
   }
   .about-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+   
   }
   .about-info p {
     width: 75%;
@@ -457,18 +458,14 @@
     margin-top: 25px;
     font-size: 30px;
     text-decoration: none;
-  
-    color: #ffe06a;
   }
   .about-info button {
-    background-color: #ffe06a;
-    color: #000000;
     margin-top: 15px;
     font-size: 20px;
     font-weight: bold;
     border: 1px solid;
     border-radius: 50px;
-    border-color: black;
+    /* border-color: black; */
     height: 40px;
     width: 220px;
   }
@@ -480,7 +477,7 @@
   .p-servise p {
     font-size: 25px;
     padding-left: 12px;
-    color: #ffffff;
+    /* color: #ffffff; */
   }
   
   .services-container {
@@ -495,10 +492,10 @@
   .Services {
     display: flex;
     flex-direction: column;
-    color: #000000;
+    /* color: #000000; */
     margin-top: 40px;
     margin-left: 0px;
-    background-color: #c4c4c4;
+    /* background-color: #c4c4c4; */
     width: 80%;
     height: auto;
   }
@@ -512,7 +509,7 @@
     transform: translate(-50%, -50%);
     top: 75%;
     left: 50%;
-    color: #ffe06a;
+    /* color: #ffe06a; */
     font-size: 20px;
     width: 100%;
   }
