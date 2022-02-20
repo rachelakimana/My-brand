@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="blogpost.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <title>Blogpost</title>
+  </head>
+  <body>
+    <div class="siderbar">
+      <div class="sidebar-header">
+        <h2 class="brand">
+          <span>Dashboard</span>
+        </h2>
+        <span class="memu-icon"><i class="fa-solid fa-bars"></i></span>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <a href="dashboard.html">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Recent</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>New Post</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>comments</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Message</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Draft</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Pages</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="blogpost-container">
+      <div class="b-action">
+        <button id="savebtn" type="button">save</button>
+        <button id="Publishbtn" type="button">Publish</button>
+      </div>
+      <form>
+        <div class="postform-container">
+          <div class="first-postform">
+            <label for="id">Id</label><br />
+            <input
+              type="number"
+              name="id"
+              id="article-number"
+              placeholder=""
+            /><br /><br />
+            <label for="title">Title</label><br />
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder=""
+            /><br /><br />
+            <label for="image" id="image">Upload Article image</label
+            ><br /><br />
+            <input
+              type="file"
+              name="image"
+              id="image-url"
+              placeholder=""
+            /><br /><br />
+            <label for="imgdescription">Image description</label><br />
+            <input
+              type="text"
+              name="description"
+              id="imgname"
+              placeholder="description"
+            /><br /><br />
+            <label for="date">date</label><br />
+            <input
+              type="datetime-local"
+              id="date"
+              name="date"
+              placeholder=""
+            /><br /><br />
+          </div>
+          <div class="second-postform"></div>
+          <p id="pmessage">Article Content</p>
+          <textarea rows="20" cols="100" name="comment" form="usrform">
+                Write your content here...</textarea
+          ><br />
+        </div>
+
+        <!-- <input type="submit" id="button-send" value="Send" /> -->
+      </form>
+    </div>
+  </body>
+</html>

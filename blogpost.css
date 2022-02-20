@@ -1,0 +1,39 @@
+.blogpost-container {
+  margin-left: 20%;
+  width: 70%;
+  padding-left: 3%;
+  padding-right: 5%;
+}
+.b-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 20%;
+}
+#savebtn {
+}
+#savebtn,
+#Publishbtn {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #04aa6d;
+  font-size: 25px;
+}
+#Publishbtn {
+  margin-left: 5%;
+}
+.first-postform,
+.second-postform > label,
+p {
+  font-size: 18px;
+}
+
+#article-number,
+#title,
+#image-url,
+#imgname,
+#date {
+  width: 350px;
+  height: 40px;
+}

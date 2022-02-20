@@ -1,35 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link href="fontawesome/css/all.css" rel="stylesheet">
-                <title>Dashboard</title>
-</head>
-<body>
-    <div class="dasgboard-container">
-    <div class="task">
-    <h2>DASHBOARD</h2>
-    <div class="recent-article"><a>Recent Article</a> </div>
-    <div class="Add-article" ><i class="fa-solid fa-ballot-check"></i><a>Post Article</a> </div>
-    <div class="update-article"><a>Update Article</a> </div>
-    <div class="delete-article"><a>Delete Article</a> </div>
-    <div class="blog-comment"><i class="fa-solid fa-comment-plus"></i><a>Blog Comments</a> </div>
-    <div class="contact-message"><a>Contact Message</a></div>
-    <div class="subscribers-menu"><a>Subscribers</a></div>
-    <div class="logout"><i class="fa-solid fa-arrow-up-left-from-circle"></i><a>Logout</a></div>
-    <div class="draft"><a>Draft</a></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <link href="dashboard.css" rel="stylesheet" />
+
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="siderbar">
+      <div class="sidebar-header">
+        <h2 class="brand">
+          <span>Dashboard</span>
+        </h2>
+        <span class="memu-icon"><i class="fa-solid fa-bars"></i></span>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Recent</span>
+            </a>
+          </li>
+          <li>
+            <a href="blogpost.html">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>New Post</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>comments</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Message</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Draft</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Pages</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="repot-view">
-    <div class="post-view"><i class="fa-solid fa-ballot-check"></i><p>Post</p><p>30</p></div>
-    <div class="views"><i class="fa-solid fa-users"></i><p>Views</p><p>1024</p></div>
-    <div class="comments-view"><i class="fa-solid fa-comment-plus"></i><p>Comments</p><p>12</p></div>
-    <div class="message-view"><i class="fa-solid fa-message-plus"></i><p>New Message</p><p>50</p></div>
-    <div class="subscriber-view"><p>Subscribers</p><p>124</p></div>
+    <div class="main-content">
+      <main>
+        <h2>Overview</h2>
+        <div class="dashboard-cards">
+          <div class="card-single">
+            <div class="card-body">
+              <div class="card-icon">
+                <i class="fa-solid fa-file-lines"></i>
+              </div>
+              <div class="card-content">
+                <h3>Post</h3>
+                <p>150</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href=""> View all</a>
+            </div>
+          </div>
+          <div class="card-single">
+            <div class="card-body">
+              <div class="card-icon">
+                <i class="fa-solid fa-file-lines"></i>
+              </div>
+              <div class="card-content">
+                <h3>Messages</h3>
+                <p>10</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href=""> View all</a>
+            </div>
+          </div>
+
+          <div class="card-single">
+            <div class="card-body">
+              <div class="card-icon">
+                <i class="fa-solid fa-file-lines"></i>
+              </div>
+              <div class="card-content">
+                <h3>Comments</h3>
+                <p>80</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href=""> View all</a>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-    <div class="last-posted">
+    <div class="post-container">
+      <h1>Recent Article</h1>
+
+      <table id="Articles">
+        <tr>
+          <th>number</th>
+          <th>image</th>
+          <th>date</th>
+          <th>title</th>
+          <th>content</th>
+          <th>update</th>
+          <th>Delete</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <img
+              src="images/plugin1.png"
+              style="width: 120px; height: 80px"
+              alt=""
+            />
+            <span>unspash Image</span>
+          </td>
+          <td>january 10 2022</td>
+          <td>Germany</td>
+          <td>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, It has survived not only five centuries, but
+            also the leap into electronic typesetting.
+          </td>
+          <td><i class="fa-solid fa-pen"></i></td>
+          <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <img
+              src="images/plugin1.png"
+              style="width: 120px; height: 80px"
+              alt=""
+            />
+            <span>unspash Image</span>
+          </td>
+          <td>january 10 2022</td>
+          <td>Germany</td>
+          <td>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, It has survived not only five centuries, but
+            also the leap into electronic typesetting.
+          </td>
+          <td><i class="fa-solid fa-pen"></i></td>
+          <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <img
+              src="images/plugin1.png"
+              style="width: 120px; height: 80px"
+              alt=""
+            />
+            <span>unspash Image</span>
+          </td>
+          <td>january 10 2022</td>
+          <td>Germany</td>
+          <td>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, It has survived not only five centuries, but
+            also the leap into electronic typesetting.
+          </td>
+          <td><i class="fa-solid fa-pen"></i></td>
+          <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <img
+              src="images/plugin1.png"
+              style="width: 120px; height: 80px"
+              alt=""
+            />
+            <span>unspash Image</span>
+          </td>
+          <td>january 10 2022</td>
+          <td>Germany</td>
+          <td>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, It has survived not only five centuries, but
+            also the leap into electronic typesetting.
+          </td>
+          <td><i class="fa-solid fa-pen"></i></td>
+          <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <img
+              src="images/plugin1.png"
+              style="width: 120px; height: 80px"
+              alt=""
+            />
+            <span>unspash Image</span>
+          </td>
+          <td>january 10 2022</td>
+          <td>Germany</td>
+          <td>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, It has survived not only five centuries, but
+            also the leap into electronic typesetting.
+          </td>
+          <td><i class="fa-solid fa-pen"></i></td>
+          <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <img
+              src="images/plugin1.png"
+              style="width: 120px; height: 80px"
+              alt=""
+            />
+            <span>unspash Image</span>
+          </td>
+          <td>january 10 2022</td>
+          <td>Germany</td>
+          <td>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, It has survived not only five centuries, but
+            also the leap into electronic typesetting.
+          </td>
+          <td><i class="fa-solid fa-pen"></i></td>
+          <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <img
+              src="images/plugin1.png"
+              style="width: 120px; height: 80px"
+              alt=""
+            />
+            <span>unspash Image</span>
+          </td>
+          <td>january 10 2022</td>
+          <td>Germany</td>
+          <td>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, It has survived not only five centuries, but
+            also the leap into electronic typesetting.
+          </td>
+          <td><i class="fa-solid fa-pen"></i></td>
+          <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr>
+      </table>
     </div>
-    </div>            
-</body>
+  </body>
 </html>
