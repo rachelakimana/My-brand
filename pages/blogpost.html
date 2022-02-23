@@ -69,16 +69,9 @@
         <button id="savebtn" type="button">save</button>
         <button id="Publishbtn" type="button">Publish</button>
       </div>
-      <form>
+      <form class="add">
         <div class="postform-container">
           <div class="first-postform">
-            <label for="id">Id</label><br />
-            <input
-              type="number"
-              name="id"
-              id="article-number"
-              placeholder=""
-            /><br /><br />
             <label for="title">Title</label><br />
             <input
               type="text"
@@ -89,7 +82,7 @@
             <label for="image" id="image">Upload Article image</label
             ><br /><br />
             <input
-              type="file"
+              type="text"
               name="image"
               id="image-url"
               placeholder=""
@@ -104,20 +97,30 @@
             <label for="date">date</label><br />
             <input
               type="datetime-local"
-              id="date"
+              id="cdate"
               name="date"
               placeholder=""
             /><br /><br />
           </div>
           <div class="second-postform"></div>
           <p id="pmessage">Article Content</p>
-          <textarea rows="20" cols="100" name="comment" form="usrform">
+          <textarea
+            rows="20"
+            cols="100"
+            name="content"
+            id="content"
+            form="usrform"
+          >
                 Write your content here...</textarea
           ><br />
         </div>
+        <button type="submit" id="submit">submit</button>
 
         <!-- <input type="submit" id="button-send" value="Send" /> -->
       </form>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="/src/app.js"></script>
   </body>
 </html>
