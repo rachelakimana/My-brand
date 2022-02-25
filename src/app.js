@@ -10,6 +10,8 @@ const firebaseConfig = {
 //Initialize Cloud Firestore
 firebase.initializeApp(firebaseConfig);
 
+console.log(firebase);
+
 var firestore = firebase.firestore();
 
 //variable to access database
@@ -19,14 +21,14 @@ const db = firestore.collection("Articles");
 let submitButton = document.getElementById("submit");
 
 // create event listener to allow form submition
+
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
 
   // get form values
-  let title = document.getElementById("title").value;
-  let createdDate = document.getElementById("cdate").value;
-  let content = document.getElementById("content").value;
-
+  var title = document.getElementById("title").value;
+  var createdDate = document.getElementById("cdate").value;
+  var content = document.getElementById("content").value;
   // save form data to firebase
   db.doc()
     .set({
@@ -41,3 +43,95 @@ submitButton.addEventListener("click", (e) => {
       console.log(error);
     });
 });
+
+// variables
+var imagename, imageurl;
+var files = [];
+var reader = new FileReader();
+
+// selection process
+var loadFile = function (event) {
+  var output = document.getElementById("output");
+  output.src = URL.createObjectURL(event.target.files[0]);
+  output.onload = function () {
+    URL.revokeObjectURL(output.src);
+  };
+};
+//upload picture to storage
+document.getElementById("upload").onclick = function () {
+  imagename = document.getElementById("imgname");
+  var uploadimage = firebase
+    .storage()
+    .ref("Image/" + imagename.value + ".png")
+    .put(files[0]);
+
+  uploadimage.on(
+    "state_changed",
+    function (snapshot) {
+      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      document.getElementById("showprogress").innerHTML =
+        "upload" + progress + "%";
+    },
+
+    //error handling
+    function (error) {
+      alert("error in the saving the image");
+    },
+
+    //submit image link to database
+    function () {
+      uploadimage.snapshot.ref.getDownloadURL().then(function (url) {
+        imageurl = url;
+        console.log(imageurl);
+        firebase
+          .database()
+          .ref("picture/" + imagename)
+          .set({
+            Name: imagename.value,
+            Link: imageurl,
+          });
+        console.log("image added successfully");
+      });
+    }
+  );
+};
+
+// // upload file to firebase
+// document.getElementById("upload").addEventListener("click", function () {
+//   imagename = document.getElementById("imgname").value;
+//   //checks if files are selected
+//   if (files.length != 0) {
+//     //create a storage reference
+//     var storage = firebase.storage().ref(files[0].name);
+
+//     //upload file
+//     var upload = storage.put(files[0]);
+
+//     //update progress bar
+//     upload.on(
+//       "state_changed",
+//       function progress(snapshot) {
+//         var percentage =
+//           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+//         document.getElementById("progress").innerHTML =
+//           "Upload" + percentage + "%";
+//       },
+
+//       function error() {
+//         alert("error in uploading file");
+//       },
+//       function () {
+//         percentage.snapshot.ref.getDownloadURL().then(function (url) {
+//           imageurl = url;
+//           firebase
+//             .database()
+//             .ref("picture/" + imagename)
+//             .set({
+//               Name: imagename,
+//               Link: imageurl,
+//             });
+//         });
+//       }
+//     );
+//   }
+// });

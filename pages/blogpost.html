@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/css/dashboard.css" />
     <link href="/fontawesome/css/all.css" rel="stylesheet" />
     <title>Blogpost</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   </head>
   <body>
     <div class="siderbar">
@@ -69,7 +72,7 @@
         <button id="savebtn" type="button">save</button>
         <button id="Publishbtn" type="button">Publish</button>
       </div>
-      <form class="add">
+      <form id="articleid">
         <div class="postform-container">
           <div class="first-postform">
             <label for="title">Title</label><br />
@@ -79,14 +82,8 @@
               id="title"
               placeholder=""
             /><br /><br />
-            <label for="image" id="image">Upload Article image</label
-            ><br /><br />
-            <input
-              type="text"
-              name="image"
-              id="image-url"
-              placeholder=""
-            /><br /><br />
+            <label for="imagetitle">Upload Article image</label><br /><br />
+
             <label for="imgdescription">Image description</label><br />
             <input
               type="text"
@@ -94,6 +91,11 @@
               id="imgname"
               placeholder="description"
             /><br /><br />
+            <img id="output" />
+            <input type="file" accept="image/*" onchange="loadFile(event)" />
+
+            <label id="showprogress"></label><br />
+            <button id="upload">upload image</button>
             <label for="date">date</label><br />
             <input
               type="datetime-local"
@@ -119,8 +121,6 @@
         <!-- <input type="submit" id="button-send" value="Send" /> -->
       </form>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="/src/app.js"></script>
   </body>
 </html>
