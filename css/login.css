@@ -5,106 +5,103 @@ body {
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color:#c4c4c4 ;
+  background-color: #c4c4c4;
 }
 
 .loginimage-container {
-position: relative;
+  position: relative;
   height: 40%;
   width: 50%;
   background-color: #000000;
 }
-.loginimage-container img{
-   width: 100%; 
-   height: 100%;          
+.loginimage-container img {
+  width: 100%;
+  height: 100%;
 }
-.loginimage-container span{
-                position: absolute;
-                transform: translate(-50%, -50%);
-                top: 65%;
-                left: 65%;
-                font-weight: bold;
-                color: #FFFFFF;
-                font-size: 50px;
-                width: 100%;
-                opacity:0.8;           
+.loginimage-container span {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 65%;
+  left: 65%;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 50px;
+  width: 100%;
+  opacity: 0.8;
 }
 .loginform-container {
   background-color: #4b1a41;
   height: 60%;
   width: 50%;
   display: flex;
- align-items: start;
- justify-content: center;   
-  
+  align-items: start;
+  justify-content: center;
 }
-.form-container{
- background-color: #FFFFFF;
- height: 90%;
- width: 70%; 
- display: flex;
- align-items: start;
- justify-content: center;      
+.form-container {
+  background-color: #ffffff;
+  height: 90%;
+  width: 70%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
 }
 
 .signindiv-container {
-height: 100%;
-width: 100%;
-
+  height: 100%;
+  width: 100%;
 }
 .first-signindiv {
-margin-top:  5%;
-font-size: 20px;
-font-weight: bold;
-color:#000000;
+  margin-top: 5%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
 }
 
 .first-signindiv input {
-margin-top: 2%;
+  margin-top: 2%;
 }
 .style-checkbox {
-                display: flex;
-                flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .second-signindiv {
-                 margin-top: 3%;
-                 /* background-color:blueviolet; */
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
+  margin-top: 3%;
+  /* background-color:blueviolet; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.p-pswd{
-  margin-left: 30%;    
+.p-pswd {
+  margin-left: 30%;
   /* background-color:brown;           */
 }
-.p-pswd p{
-    font-style: italic;
-    color:#4b1a41;            
+.p-pswd p {
+  font-style: italic;
+  color: #4b1a41;
 }
 
-.submit{
-    margin-top: 15%;  
-         
+.submit {
+  margin-top: 15%;
 }
-.submit input {
-height:40px;
-width: 350px;
-font-size:20px;
-color:#FFFFFF;
-background-color: #4b1a41;
-border: 1.5px solid #000000;              
+.submit button {
+  height: 40px;
+  width: 350px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #4b1a41;
+  border: 1.5px solid #000000;
 }
-#username, #password{
-height:30px;
-width: 350px;
-border: 1.5px solid #000000;           
+#useremail,
+#userpassword {
+  height: 30px;
+  width: 350px;
+  border: 1.5px solid #000000;
 }
-#password{
-                
+#password {
 }
-#check-box{
-height:30px;
-width: 30px;            
+#check-box {
+  height: 30px;
+  width: 30px;
 }

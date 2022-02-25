@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/login.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <title>Login form</title>
   </head>
   <body>
@@ -14,18 +17,23 @@
     </div>
     <div class="loginform-container">
       <div class="form-container">
-        <form action="">
+        <form id="loginform">
           <div class="signindiv-container">
             <div class="first-signindiv">
-              <label for="username">Email</label><br />
+              <label for="useremail">Email</label><br />
               <input
                 type="text"
-                id="username"
+                id="useremail"
                 name="username"
                 required
               /><br /><br />
               <label for="password">Password</label><br />
-              <input type="text" id="password" name="password" required /><br />
+              <input
+                type="text"
+                id="userpassword"
+                name="password"
+                required
+              /><br />
             </div>
             <div class="style-checkbox">
               <div class="second-signindiv">
@@ -40,30 +48,23 @@
               <div class="p-pswd"><p>Forgot password?</p></div>
             </div>
             <div class="submit">
-              <input type="submit" value="Login" />
+              <!-- Please here use button instead of input.
+            Also use onclick events and instead of 
+            querying elements everytime in your js.
+            
+            Style the below button, I have forgot the classes 
+            I deledted.
+            But it is working and displaying in console.
+            you should be good to go.
+            Love ya!
+             -->
+              <!-- <button onclick="submit()">Submit</button> -->
+              <button>Login</button>
             </div>
           </div>
         </form>
       </div>
     </div>
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyDjoDBwi1YFBTG6ciyn8PyiwigXzgjlnyA",
-        authDomain: "capstonee-829ec.firebaseapp.com",
-        projectId: "capstonee-829ec",
-        storageBucket: "capstonee-829ec.appspot.com",
-        messagingSenderId: "724020686251",
-        appId: "1:724020686251:web:13af0371dda4fd3284f6ee",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-    </script>
   </body>
+  <script src="/src/login.js"></script>
 </html>
