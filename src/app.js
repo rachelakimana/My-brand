@@ -43,7 +43,10 @@ submitButton.addEventListener("click", (e) => {
       console.log(error);
     });
 });
-
+function myFunction() {
+  document.getElementById("articleid").reset();
+  document.getElementById("content").value = "";
+}
 // variables
 var imagename, imageurl;
 var files = [];

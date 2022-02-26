@@ -12,6 +12,16 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 var firestore = firebase.firestore();
 
+//listen for auth staus change
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    console.log("user logged in: ", user);
+  } else {
+    console.log("user logged out", user);
+  }
+});
+
+//regisration form
 const loginForm = document.querySelector("#loginform");
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -19,12 +29,27 @@ loginForm.addEventListener("submit", (e) => {
   const email = document.querySelector("#useremail").value;
   const password = document.querySelector("#userpassword").value;
   console.log(email, password);
-  alert("tou successfully logged in");
+  alert("you successfully logged in");
 
-  //sign in the user
-  auth.createUserWithEmailAndPassword(email, password).then((cred) => {
-    const modal = document.querySelector(".loginform-container");
-    M.Modal.getInstance(modal).close();
+  //sign the user in
+
+  auth.signInWithEmailAndPassword(email, password).then((cred) => {
+    //reset form
     loginForm.reset();
+    window.location.href = "/pages/dashboard.html";
   });
+  // auth.createUserWithEmailAndPassword(email, password).then((cred) => {
+  //   const modal = document.querySelector(".loginform-container");
+  //   M.Modal.getInstance(modal).close();
+  //   //reset form
+  //   loginForm.reset();
+  //   window.location.href = "/pages/dashboard.html";
+  // });
+});
+
+//user logout
+const logout = document.querySelector("#logout");
+logout.addEventListener("click", (e) => {
+  e.preventDefault();
+  auth.signOut();
 });

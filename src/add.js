@@ -79,3 +79,17 @@ db.get().then((snapshot) => {
     renderAticles(doc);
   });
 });
+
+db.onSnapshot((snapshot) => {
+  let changes = snapshot.docChanges();
+  changes.forEach((change) => {
+    console.log(change.doc.data());
+    if (change.type == "added") {
+      renderAticles(change.doc);
+    } else if (change.type == "removed") {
+      let li = bloglist.querySelector("[articleid=" + change.doc.id + "]");
+      bloglist.removeChild(li);
+      console.log("article removed");
+    }
+  });
+});
