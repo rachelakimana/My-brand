@@ -7,6 +7,10 @@
     <link href="/fontawesome/css/all.css" rel="stylesheet" />
     <link href="/css/dashboard.css" rel="stylesheet" />
     <link href="/css/blogstyle.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
     <title>Dashboard</title>
   </head>
@@ -59,7 +63,7 @@
           <li>
             <a href="">
               <span><i class="fa-solid fa-message"></i></span>
-              <span>Logout</span>
+              <span id="logout">Logout</span>
             </a>
           </li>
         </ul>
@@ -194,9 +198,8 @@
 
       <!-- <i class="fa-solid fa-pen"></i> -->
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="/src/add.js"></script>
+    <script src="/src/app.js"></script>
+    <script src="/src/viewarticle.js"></script>
+    <script src="/src/login.js"></script>
   </body>
 </html>

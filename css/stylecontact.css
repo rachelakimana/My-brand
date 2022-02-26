@@ -1,28 +1,28 @@
 /* Contact page */
 .div-container {
   display: flex;
-   width: 100%;
-   background: linear-gradient(to left, #4b1a41 50%, #c4c4c4 50%);
-   height: 100vh; 
+  width: 100%;
+  background: linear-gradient(to left, #4b1a41 50%, #c4c4c4 50%);
+  height: 100vh;
   justify-content: center;
-   align-items: center;
+  align-items: center;
 }
 .contact-form {
-  display:flex;
+  display: flex;
   justify-content: center;
-   align-items: center;
-  width: 70%; 
-  height: 70%; 
+  align-items: center;
+  width: 70%;
+  height: 70%;
   margin-left: 20%;
-  background-color: white; 
+  background-color: white;
 
   flex-direction: row;
 }
 
 .contact-info {
-  display:flex;
-   align-items: flex-start;
-   flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
   height: 80%;
   width: 60%;
   margin-left: -20%;
@@ -39,16 +39,16 @@
 }
 .awesome i {
   font-size: 22px;
- margin-right: 3%;
+  margin-right: 3%;
 }
-.awesome p{
-  font-size:22px;
+.awesome p {
+  font-size: 22px;
 }
 
 .awesome-social {
   display: flex;
   flex-direction: row;
-  margin-top:20%;
+  margin-top: 20%;
   font-size: 30px;
   color: #ffffff;
 }
@@ -58,13 +58,12 @@
 }
 .div-form {
   margin: 5%;
- 
 }
 
 #fname,
 #lname,
 #email,
-#phone-number {
+#phonenumber {
   font-size: 16px;
 
   border: none;
@@ -73,7 +72,6 @@
   outline: none;
 }
 .pmessage {
-  
 }
 #message {
   font-size: 16px;
@@ -97,7 +95,7 @@
   margin-left: 10%;
 }
 
-#button-send {
+#buttonsend {
   font-size: 20px;
   margin-top: 5%;
   width: 30%;
@@ -105,84 +103,82 @@
   color: #ffffff;
   background-color: #4b1a41;
 }
-.my-footer{
+.my-footer {
   display: none;
 }
 
 @media screen and (max-width: 960px) {
-  .my-footer{
+  .my-footer {
     display: flex;
   }
   .div-container {
     justify-content: center;
     align-items: flex-start;
-     background:#4b1a41 50%;
-     height: 70%;
+    background: #4b1a41 50%;
+    height: 70%;
   }
   .contact-form {
     display: flex;
-    width: 90%; 
-   height:auto;
+    width: 90%;
+    height: auto;
     align-items: flex-start;
-    justify-content:center;
-    margin-left:0%;
+    justify-content: center;
+    margin-left: 0%;
     margin-top: 10%;
-    background-color: white; 
-  
-    flex-direction:inherit;
+    background-color: white;
+
+    flex-direction: inherit;
   }
-  
+
   .contact-info {
-    display:none; 
-     /* align-items: flex-start;
+    display: none;
+    /* align-items: flex-start;
      flex-direction: column;
     height: 80%;
     width: 60%;
     margin-left: -20%;
     background-color: #4b1a41; */
   }
-  
+
   .div-form {
     margin: 3%;
-   
   }
-  
+
   #fname,
   #lname,
   #email,
-  #phone-number {
+  #phonenumber {
     font-size: 18px;
-  
+
     border: none;
     border-bottom: 1px solid black;
     padding-top: 40px;
     outline: none;
   }
   .pmessage {
-    
   }
   #message {
     font-size: 16px;
-  
+
     border: none;
     border-bottom: 1px solid black;
     margin-top: 20px;
     padding: 1px 140px;
     outline: none;
   }
-  
+
   .inputdiv-container {
     display: flex;
     flex-direction: row;
   }
-  
+
   .first-iniputdiv {
   }
   .second-iniputdiv {
     margin-left: 10%;
   }
-  
-  #button-send {
+
+  #buttonsend {
     font-size: 20px;
     margin-top: 5%;
     width: 30%;
@@ -196,42 +192,37 @@
   .inputdiv-container {
     display: flex;
     flex-direction: column;
-   
   }
   .contact-form {
     margin-top: 4%;
     margin-bottom: 4%;
-  
   }
   .contact-info {
-    display:none; 
+    display: none;
   }
-  .div-form{
+  .div-form {
     display: flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content:center;
-   
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
   }
-  
- 
+
   .second-iniputdiv {
     margin-top: 15px;
     margin-left: 0%;
   }
-  
+
   .pmessage {
-    
   }
   #message {
     font-size: 16px;
-  
+
     border: none;
     border-bottom: 1px solid black;
     margin-top: 20px;
     padding: 5px 30px;
     outline: none;
   }
-
 }
