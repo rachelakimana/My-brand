@@ -22,6 +22,7 @@ submitButton.addEventListener("click", (e) => {
     })
     .then(() => {
       console.log("Data saved");
+      window.location.reload();
     })
     .catch((error) => {
       console.log(error);
