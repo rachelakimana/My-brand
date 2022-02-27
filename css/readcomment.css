@@ -1,0 +1,34 @@
+.commentcontainer {
+  margin-left: 20%;
+  height: 100%;
+  width: 80%;
+  top: 0;
+  background-color: rgb(234, 236, 236);
+}
+.commentcontainer h2 {
+  margin-left: 7%;
+  padding-top: 3%;
+}
+.commentlist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin: 3%;
+  width: 90%;
+}
+#comment {
+  margin-left: 5%;
+  width: 90%;
+  background-color: blue;
+}
+
+#trashicon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: yellowgreen;
+  width: 10%;
+  color: rgb(170, 12, 12);
+}

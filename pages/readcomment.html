@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/readcomment.css" />
+    <link href="/fontawesome/css/all.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <title>Read message from contact page</title>
+  </head>
+  <body>
+    <div class="siderbar">
+      <div class="sidebar-header">
+        <h2 class="brand">
+          <span>Dashboard</span>
+        </h2>
+        <span class="memu-icon"><i class="fa-solid fa-bars"></i></span>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <a href="/pages/dashboard.html">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Recent</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>New Post</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>comments</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Message</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Draft</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Pages</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-message"></i></span>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="commentcontainer">
+      <h2>Read Comments</h2>
+
+      <ul id="commentwrapper">
+        <li class="commentlist" id="commentid">
+          <div id="comment">
+            <p>weeeeeee@gmail.com</p>
+            <p id="description">
+              It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
+            </p>
+          </div>
+          <div id="trashicon"><i class="fa-solid fa-trash-can"></i></div>
+        </li>
+        <li class="commentlist" id="commentid">
+          <div id="comment">
+            <p>weeeeeee@gmail.com</p>
+            <p id="description">
+              It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
+            </p>
+          </div>
+          <div id="trashicon"><i class="fa-solid fa-trash-can"></i></div>
+        </li>
+      </ul>
+    </div>
+    <script src="/src/app.js"></script>
+    <script src="/src/readcomment.js"></script>
+  </body>
+</html>
