@@ -1,6 +1,6 @@
 .blog-container {
   height: 100%;
-  width: 100%;
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,9 +10,9 @@
 }
 .blog-list {
   background-color: white;
-  width: 75%;
-  height: 30%;
-  margin-top: 3%;
+  width: 80%;
+  height: auto;
+  margin-top: 2%;
 }
 .blog-list a {
   text-decoration: none;
@@ -54,6 +54,13 @@
 .blog-description span {
   color: #4b1a41;
   font-weight: bold;
+}
+#trashicon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  color: rgb(170, 12, 12);
 }
 
 @media screen and (max-width: 800px) {

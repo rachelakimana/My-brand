@@ -21,14 +21,12 @@
 #comment {
   margin-left: 5%;
   width: 90%;
-  background-color: blue;
 }
 
 #trashicon {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: yellowgreen;
   width: 10%;
   color: rgb(170, 12, 12);
 }

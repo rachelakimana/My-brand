@@ -28,3 +28,59 @@ submitButton.addEventListener("click", (e) => {
       console.log(error);
     });
 });
+
+// function myFunction() {
+//   document.getElementById("articleid").reset();
+//   document.getElementById("content").value = "";
+// }
+// // variables
+// var imagename, imageurl;
+// var files = [];
+// var reader = new FileReader();
+
+// // selection process
+// var loadFile = function (event) {
+//   var output = document.getElementById("output");
+//   output.src = URL.createObjectURL(event.target.files[0]);
+//   output.onload = function () {
+//     URL.revokeObjectURL(output.src);
+//   };
+// };
+// //upload picture to storage
+// document.getElementById("upload").onclick = function () {
+//   imagename = document.getElementById("imgname");
+//   var uploadimage = firebase
+//     .storage()
+//     .ref("Image/" + imagename.value + ".png")
+//     .put(files[0]);
+
+//   uploadimage.on(
+//     "state_changed",
+//     function (snapshot) {
+//       var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+//       document.getElementById("showprogress").innerHTML =
+//         "upload" + progress + "%";
+//     },
+
+//     //error handling
+//     function (error) {
+//       alert("error in the saving the image");
+//     },
+
+//     //submit image link to database
+//     function () {
+//       uploadimage.snapshot.ref.getDownloadURL().then(function (url) {
+//         imageurl = url;
+//         console.log(imageurl);
+//         firebase
+//           .database()
+//           .ref("picture/" + imagename)
+//           .set({
+//             Name: imagename.value,
+//             Link: imageurl,
+//           });
+//         console.log("image added successfully");
+//       });
+//     }
+//   );
+// };

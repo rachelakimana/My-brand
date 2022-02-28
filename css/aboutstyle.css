@@ -45,7 +45,7 @@
   border-color: #4b1a41;
   margin-top: 50px;
 }
-.me-imageB-respo{
+.me-imageB-respo {
   display: none;
 }
 .me-imageB img {
@@ -63,61 +63,57 @@
 }
 
 .skills-infoB h1 {
-  padding-top:0px ;
+  padding-top: 0px;
 }
 
-.skills-icon-container{
+.skills-icon-container {
   display: flex;
   flex-direction: row;
 }
-.skills-icon1{
-  margin-left:10px;
-  
+.skills-icon1 {
+  margin-left: 10px;
 }
-.skills-icon2{
-  margin-left:50px;
-  
+.skills-icon2 {
+  margin-left: 50px;
 }
-.skills-icon{
+.skills-icon {
   display: flex;
   flex-direction: row;
-  font-size:20px;
-  
+  font-size: 20px;
 }
-.skills-icon i{
+.skills-icon i {
   color: #000000;
   font-size: 40px;
 }
-.skills-icon p{
-  padding-left:10%;
+.skills-icon p {
+  padding-left: 10%;
 }
 
-.container-me-experience{
-  height:max-content;
+.container-me-experience {
+  height: max-content;
   width: 100%;
-  padding-top:20px;
+  padding-top: 20px;
   margin-right: 20px;
   background-color: white;
 }
 .me-experiencelB {
   margin: 30px;
- padding: 20px;
+  padding: 20px;
   border: 3px solid;
   border-color: #4b1a41;
   background-color: inherit;
 }
 .me-experiencelB h1 {
-  
 }
 
 .experiance1 {
- 
 }
 .experiance2 {
   border-top: 0.5px solid;
   border-color: #4b1a41;
 }
-.experiance2 h2, .experiance1 h2{
+.experiance2 h2,
+.experiance1 h2 {
   font-size: 25px;
   color: #4b1a41;
 }
@@ -145,23 +141,20 @@ li {
   }
   .professional-infoB {
     display: flex;
-    flex-direction:column;
+    flex-direction: column-reverse;
     width: 100%;
     height: auto;
   }
   .me-profesionalB {
     margin-left: 20px;
-   
   }
   .me-profesionalB p {
     color: #000000;
     font-size: 20px;
     width: 80%;
-    
   }
   .me-profesionalB h1 {
     color: #4b1a41;
-    
   }
   .me-profesionalB button {
     background-color: #4b1a41;
@@ -178,28 +171,26 @@ li {
   .me-imageB {
     display: none;
   }
-  .me-imageB-respo{
+  #me-imageB-respo {
     display: flex;
     margin-left: 5%;
-    
   }
-  .me-imageB-respo img {
+  #me-imageB-respo img {
     padding-left: 15px;
     height: 280px;
     width: 300px;
   }
-  
+
   .skills-infoB {
     /* background-color:blueviolet; */
     margin-top: 20px;
     margin-left: 20px;
   }
-  
+
   .skills-infoB h1 {
-    padding-top:50px ;
-    
+    padding-top: 50px;
   }
-  
+
   .me-experiencelB {
     margin-top: 40px;
     margin-left: 20px;
@@ -208,16 +199,13 @@ li {
     border-color: #4b1a41;
   }
   .me-experiencelB h1 {
-   
   }
-  
+
   .experiance1 {
-    
   }
   .experiance2 {
     border-top: 0.5px solid;
     border-color: #000000;
-   
   }
   .job-infoB {
     display: flex;
@@ -239,7 +227,7 @@ li {
     margin-left: 20px;
     margin-top: 20px;
   }
-  
+
   .get-in-touch p {
     font-size: 20px;
   }

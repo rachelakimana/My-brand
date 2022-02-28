@@ -16,7 +16,6 @@ function renderAticles(doc) {
   var spandate = document.createElement("span");
   var paragraph = document.createElement("p");
   var blogowner = document.createElement("span");
-  let deletearticle = document.createElement("div");
 
   header5.append("posted on:", spandate, "by", blogowner);
   blogowner.textContent = "Akimana Rachel";
@@ -29,10 +28,8 @@ function renderAticles(doc) {
 
   blogcontainer.appendChild(bloglist);
   bloglist.appendChild(bloginfo);
-  bloglist.appendChild(blogdescription);
   bloginfo.appendChild(blogimage);
   bloginfo.appendChild(blogdescription);
-  bloglist.appendChild(deletearticle);
   blogimage.appendChild(image);
   blogimage.appendChild(spanimgdescription);
   blogdescription.appendChild(header2);
@@ -43,16 +40,6 @@ function renderAticles(doc) {
   header2.textContent = doc.data().title;
   spandate.textContent = doc.data().date;
   paragraph.textContent = doc.data().content;
-
-  deletearticle.textContent = "X";
-
-  // deleting data
-  deletearticle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    let id = e.target.parentElement.getAttribute("articleid");
-    console.log(id);
-    firestore.collection("Articles").doc(id).delete();
-  });
 }
 
 db.get().then((snapshot) => {
