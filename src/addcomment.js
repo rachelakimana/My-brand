@@ -1,6 +1,3 @@
-//variable to access database
-const db = firestore.collection("Comments");
-
 // get submit form
 let submitButton = document.getElementById("submitcomnt");
 
@@ -12,14 +9,16 @@ submitButton.addEventListener("click", (e) => {
   let usremail = document.getElementById("usremail").value;
   let usrcomment = document.getElementById("usrcomment").value;
   // save form data to firebase
-  db.doc()
+  dbc
+    .doc()
     .set({
       email: usremail,
       comment: usrcomment,
     })
     .then(() => {
-      console.log("Data saved");
-      window.location.reload();
+      console.log("Comment sent");
+      usremail = "";
+      usrcomment = "";
     })
     .catch((error) => {
       console.log(error);

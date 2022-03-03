@@ -1,5 +1,3 @@
-const auth = firebase.auth();
-
 //user logout
 function logout() {
   auth.signOut().then((res) => {

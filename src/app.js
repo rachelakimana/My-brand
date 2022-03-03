@@ -15,3 +15,5 @@ console.log(firebase);
 var firestore = firebase.firestore();
 
 //variable to access database
+const dbc = firestore.collection("Comments");
+const auth = firebase.auth();

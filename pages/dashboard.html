@@ -8,9 +8,9 @@
     <link href="/css/dashboard.css" rel="stylesheet" />
     <link href="/css/blogstyle.css" rel="stylesheet" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
     <title>Dashboard</title>
   </head>
@@ -37,7 +37,7 @@
             </a>
           </li>
           <li>
-            <a href="readcomment.html">
+            <a href="/pages/readcomment.html">
               <span><i class="fa-solid fa-comment"></i></span>
               <span>comments</span>
             </a>
@@ -63,7 +63,7 @@
           <li>
             
               <span><i class="fa-solid fa-message"></i></span>
-              <a href="#" onclick="logout()">Logout</a>
+              <button onclick= logout()>Logout</button>
             </a>
           </li>
         </ul>
@@ -201,6 +201,7 @@
     
     <script src="/src/app.js"></script>
     <script src="/src/dashboardarticle.js"></script>
+    <script src="/src/auth.js"></script>
     <script src="/src/logout.js"></script>
   </body>
 </html>
