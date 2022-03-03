@@ -9,6 +9,7 @@
     <link href="/fontawesome/css/all.css" rel="stylesheet" />
     <title>Blogpost</title>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   </head>
@@ -91,11 +92,12 @@
               id="imgname"
               placeholder="description"
             /><br /><br />
-            <img id="output" />
-            <input type="file" accept="image/*" onchange="loadFile(event)" />
+            <img id="output" name="myimage" />
+            <input type="file" id="photo" />
 
-            <label id="showprogress"></label><br />
-            <button id="upload">upload image</button>
+            <input id="showprogress" style="background-color: blue" />
+            <br />
+            <button id="upload" onclick="uploadImage()">upload image</button>
             <label for="date">date</label><br />
             <input
               type="datetime-local"
@@ -116,12 +118,11 @@
                 Write your content here...</textarea
           ><br />
         </div>
-        <button type="submit" id="submit" onreset="myFunction()">submit</button>
-
-        <!-- <input type="submit" id="button-send" value="Send" /> -->
+        <button type="submit" id="submit">submit</button>
       </form>
     </div>
     <script src="/src/app.js"></script>
     <script src="/src/addarticle.js"></script>
+    <script src="/src/logout.js"></script>
   </body>
 </html>

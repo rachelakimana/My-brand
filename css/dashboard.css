@@ -10,6 +10,10 @@
   left: 0;
   background-color: #c4c4c4;
 }
+#blogpostcontainer {
+  background-color: white;
+  margin-left: 20%;
+}
 .sidebar-header {
   display: flex;
   flex-direction: row;

@@ -29,10 +29,6 @@ submitButton.addEventListener("click", (e) => {
     });
 });
 
-// function myFunction() {
-//   document.getElementById("articleid").reset();
-//   document.getElementById("content").value = "";
-// }
 // // variables
 // var imagename, imageurl;
 // var files = [];
@@ -46,12 +42,33 @@ submitButton.addEventListener("click", (e) => {
 //     URL.revokeObjectURL(output.src);
 //   };
 // };
-// //upload picture to storage
+
+function uploadImage() {
+  const ref = firebase.storage().ref();
+  const file = document.getElementById("photo").files[0];
+  const name = +new Date() + "-" + file.name;
+  const metadata = {
+    contentType: file.type,
+  };
+  const task = ref.child(name).put(file, metadata);
+  task
+    .then((snapshot) => snapshot.ref.getDownloadURL())
+    .then((url) => {
+      console.log(url);
+      alert("image uploaded successful");
+      // const image = document.querySelector("#output");
+      // image.src = url;
+    })
+    .catch(console.error);
+}
+
+//upload picture to storage
+
 // document.getElementById("upload").onclick = function () {
-//   imagename = document.getElementById("imgname");
+//   imagename = document.getElementById("photo");
 //   var uploadimage = firebase
 //     .storage()
-//     .ref("Image/" + imagename.value + ".png")
+//     .ref("Images/" + imagename.value + ".png")
 //     .put(files[0]);
 
 //   uploadimage.on(
@@ -65,22 +82,22 @@ submitButton.addEventListener("click", (e) => {
 //     //error handling
 //     function (error) {
 //       alert("error in the saving the image");
-//     },
-
-//     //submit image link to database
-//     function () {
-//       uploadimage.snapshot.ref.getDownloadURL().then(function (url) {
-//         imageurl = url;
-//         console.log(imageurl);
-//         firebase
-//           .database()
-//           .ref("picture/" + imagename)
-//           .set({
-//             Name: imagename.value,
-//             Link: imageurl,
-//           });
-//         console.log("image added successfully");
-//       });
 //     }
+
+// //submit image link to database
+// function () {
+//   uploadimage.snapshot.ref.getDownloadURL().then(function (url) {
+//     imageurl = url;
+//     console.log(imageurl);
+//     firebase
+//       .database()
+//       .ref("picture/" + imagename)
+//       .set({
+//         Name: imagename.value,
+//         Link: imageurl,
+//       });
+//     console.log("image added successfully");
+//   });
+// }
 //   );
 // };

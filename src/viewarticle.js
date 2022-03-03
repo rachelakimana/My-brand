@@ -9,13 +9,17 @@ function renderAticles(doc) {
   var bloginfo = document.createElement("div");
   var blogimage = document.createElement("div");
   var image = document.createElement("img");
+  image.src =
+    "https://2img.net/h/media02.hongkiat.com/nature-photography/autumn-poolside.jpg";
   var spanimgdescription = document.createElement("span");
+  spanimgdescription.textContent = "Nature beauty image";
   var blogdescription = document.createElement("div");
   var header2 = document.createElement("h2");
   var header5 = document.createElement("h5");
   var spandate = document.createElement("span");
   var paragraph = document.createElement("p");
   var blogowner = document.createElement("span");
+  var readMore = document.createElement("button");
 
   header5.append("posted on:", spandate, "by", blogowner);
   blogowner.textContent = "Akimana Rachel";
@@ -30,6 +34,7 @@ function renderAticles(doc) {
   bloglist.appendChild(bloginfo);
   bloginfo.appendChild(blogimage);
   bloginfo.appendChild(blogdescription);
+  bloginfo.appendChild(readMore);
   blogimage.appendChild(image);
   blogimage.appendChild(spanimgdescription);
   blogdescription.appendChild(header2);
@@ -39,7 +44,12 @@ function renderAticles(doc) {
   bloglist.setAttribute("articleid", doc.id);
   header2.textContent = doc.data().title;
   spandate.textContent = doc.data().date;
-  paragraph.textContent = doc.data().content;
+  paragraph.textContent = doc.data().content.substring(0, 200);
+  readMore.textContent = "Read More";
+  readMore.addEventListener("click", (e) => {
+    e.preventDefault();
+    location.href = `/pages/viewblog.html#${doc.id}`;
+  });
 }
 
 db.get().then((snapshot) => {
@@ -48,20 +58,6 @@ db.get().then((snapshot) => {
     // console.log(docData);
 
     renderAticles(doc);
-  });
-});
-
-db.onSnapshot((snapshot) => {
-  let changes = snapshot.docChanges();
-  changes.forEach((change) => {
-    console.log(change.doc.data());
-    if (change.type == "added") {
-      renderAticles(change.doc);
-    } else if (change.type == "removed") {
-      let li = bloglist.querySelector("[articleid=" + change.doc.id + "]");
-      bloglist.removeChild(li);
-      console.log("article removed");
-    }
   });
 });
 

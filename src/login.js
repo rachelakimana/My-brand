@@ -27,19 +27,16 @@ loginForm.addEventListener("submit", (e) => {
   });
 
   //create new user
-  auth.createUserWithEmailAndPassword(email, password).then((cred) => {
-    const modal = document.querySelector(".loginform-container");
-    M.modal.getInstance(modal).close();
-    //reset form
-    loginForm.reset();
-    window.location.href = "/pages/dashboard.html";
-  });
-});
-
-//user logout
-
-const logout = document.querySelector("#logout");
-logout.addEventListener("click", (e) => {
-  e.preventDefault();
-  auth.signOut();
+  auth
+    .createUserWithEmailAndPassword(email, password)
+    .then((cred) => {
+      const modal = document.querySelector(".loginform-container");
+      M.modal.getInstance(modal).close();
+      //reset form
+      loginForm.reset();
+      window.location.href = "/pages/dashboard.html";
+    })
+    .catch((err) => {
+      alert(err.message);
+    });
 });
