@@ -34,7 +34,7 @@
                                       </a>
                                     </li>
                                     <li>
-                                      <a href="readcomment.html">
+                                      <a href="/pages/readcomment.html">
                                         <span><i class="fa-solid fa-comment"></i></span>
                                         <span>comments</span>
                                       </a>
@@ -47,26 +47,26 @@
                                     </li>
                                     <li>
                                       <a href="">
-                                        <span><i class="fa-solid fa-container-storage"></i></span>
+                                        <span><i class="fa-brands fa-firstdraft"></i></span>
                                         <span>Draft</span>
                                       </a>
                                     </li>
                                     <li>
                                       <a href="/index.html">
-                                        <span><i class="fa-solid fa-message"></i></span>
+                                        <span><i class="fa-solid fa-copy"></i></span>
                                         <span>Pages</span>
                                       </a>
                                     </li>
-                                    <li>
+                                    <li id="logoutitem">
                                       
-                                        <span><i class="fa-solid fa-message"></i></span>
-                                        <a href="#" onclick="logout()">Logout</a>
+                                        <span><i class="fa-solid fa-right-from-bracket"></i></span>
+                                        <button onclick= logout() id="logout">Logout</button>
                                       </a>
                                     </li>
                                   </ul>
                                 </div>
                               </div>
-    <div id="blogpostcontainer">
+    <div id="blogpostcontainer" class="post-container">
       <form id="articleid">
         <div class="postform-container">
           <div class="first-postform">
@@ -77,7 +77,7 @@
               id="title"
               placeholder=""
             /><br /><br />
-            <label for="imagetitle">Upload Article image</label><br /><br />
+            <!-- <label for="imagetitle">Upload Article image</label><br /><br />
 
             <label for="imgdescription">Image description</label><br />
             <input
@@ -91,7 +91,7 @@
 
             <input id="showprogress" style="background-color: blue" />
             <br />
-            <button id="upload" onclick="uploadImage()">upload image</button>
+            <button id="upload" onclick="uploadImage()">upload image</button> -->
             <label for="date">date</label><br />
             <input
               type="datetime-local"

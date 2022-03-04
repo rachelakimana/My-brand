@@ -1,10 +1,10 @@
+//get user info
 const email = document.querySelector("#useremail");
 const password = document.querySelector("#userpassword");
 const loginbutn = document.getElementById("loginbutton");
 
 loginbutn.addEventListener("click", (e) => {
   e.preventDefault();
-  //get user info
 
   //sign the user in
   auth

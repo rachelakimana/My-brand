@@ -29,17 +29,18 @@ function renderAticles(doc) {
   blogimage.classList.add("blog-image");
   blogdescription.classList.add("blog-description");
   paragraph.classList.add("description");
+  readMore.classList.add("readmore");
 
   blogcontainer.appendChild(bloglist);
   bloglist.appendChild(bloginfo);
   bloginfo.appendChild(blogimage);
   bloginfo.appendChild(blogdescription);
-  bloginfo.appendChild(readMore);
   blogimage.appendChild(image);
   blogimage.appendChild(spanimgdescription);
   blogdescription.appendChild(header2);
   blogdescription.appendChild(header5);
   blogdescription.appendChild(paragraph);
+  blogdescription.appendChild(readMore);
 
   bloglist.setAttribute("articleid", doc.id);
   header2.textContent = doc.data().title;

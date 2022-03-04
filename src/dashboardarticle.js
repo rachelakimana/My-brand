@@ -19,21 +19,22 @@ function renderAticles(doc) {
   var spandate = document.createElement("span");
   var articlecontent = document.createElement("p");
   var blogowner = document.createElement("span");
-  let deletearticle = document.createElement("div");
   let icondelete = document.createElement("i");
-  let updatearticle = document.createElement("div");
+  let updatedeletearticle = document.createElement("div");
+  icondelete.style.color = "red";
+  icondelete.setAttribute("id", "deleteicon");
   let iconupdate = document.createElement("i");
 
   createddate.append("posted on:", spandate, "by", blogowner);
   blogowner.textContent = "Akimana Rachel";
   blogcontainer.classList.add("blog-container");
   bloglist.classList.add("blog-list");
+  bloglist.style.width = "88%";
   bloginfo.classList.add("blog-info");
   blogimage.classList.add("blog-image");
   blogdescription.classList.add("blog-description");
   articlecontent.classList.add("description");
-  deletearticle.setAttribute("id", "trashicon");
-  updatearticle.setAttribute("id", "updateicon");
+  updatedeletearticle.setAttribute("id", "updatedeletediv");
   articletitle.setAttribute("id", "titlea");
   spandate.setAttribute("id", "spand");
   articlecontent.setAttribute("id", "articlec");
@@ -42,15 +43,14 @@ function renderAticles(doc) {
   bloglist.appendChild(bloginfo);
   bloginfo.appendChild(blogimage);
   bloginfo.appendChild(blogdescription);
-  bloginfo.appendChild(deletearticle);
-  bloginfo.appendChild(updatearticle);
-  updatearticle.appendChild(iconupdate);
-  deletearticle.appendChild(icondelete);
+  updatedeletearticle.appendChild(iconupdate);
+  updatedeletearticle.appendChild(icondelete);
   blogimage.appendChild(image);
   blogimage.appendChild(spanimgdescription);
   blogdescription.appendChild(articletitle);
   blogdescription.appendChild(createddate);
   blogdescription.appendChild(articlecontent);
+  blogdescription.appendChild(updatedeletearticle);
 
   bloglist.setAttribute("blogarticleid", doc.id);
   articletitle.textContent = doc.data().title;

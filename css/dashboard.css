@@ -1,19 +1,24 @@
-* a {
-  color: black;
+body {
+  background-color: white;
 }
+* a {
+  color: white;
+}
+
 .siderbar {
   height: 100%;
   width: 20%;
   position: fixed;
-  z-index: 100;
+
   top: 0;
   left: 0;
-  background-color: #c4c4c4;
+  color: white;
+  background-color: #4b1a41;
 }
-#blogpostcontainer {
+/* #blogpostcontainer {
   background-color: white;
-  margin-left: 20%;
-}
+  margin-left: 10%;
+} */
 .sidebar-header {
   display: flex;
   flex-direction: row;
@@ -24,10 +29,27 @@
 .main-content {
   margin-left: 20%;
   height: 30%;
-  background-color: bisque;
+  background-color: #c4c4c4;
 }
 .main-content > main > h2 {
   margin-left: 5%;
+}
+
+.blog-container {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #c4c4c4;
+  list-style-type: none;
+}
+.blog-list {
+  background-color: white;
+  width: 80%;
+  height: auto;
+  margin-right: 10%;
+  margin-top: 2%;
 }
 .sidebar-menu a {
   text-decoration: none;
@@ -40,8 +62,12 @@
   margin-top: 10%;
 }
 .sidebar-header > .memu-icon {
-  margin-top: 10%;
-  margin-left: 40%;
+  margin-top: 7%;
+  margin-left: 30%;
+  font-size: 20px;
+}
+.sidebar-header > .brand {
+  margin-left: 10%;
 }
 .dashboard-cards {
   display: flex;
@@ -71,11 +97,13 @@
 .card-icon,
 .card-footer {
   /* background-color: darkkhaki; */
-  margin-left: 5%;
+  margin-left: 10%;
 }
 .card-footer a {
   font-size: 20px;
   text-decoration: none;
+  color: #4b1a41;
+  font-weight: bold;
 }
 .card-content {
   /* background-color: cyan; */
@@ -85,32 +113,47 @@
 }
 
 .card-content p {
+  color: red;
   top: 0;
+}
+#card-icon1 {
+  color: darkgreen;
+}
+#card-icon2 {
+  color: magenta;
+}
+#card-icon3 {
+  color: dodgerblue;
 }
 
 .post-container {
   margin-left: 20%;
 }
-#Articles {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+#blogpostcontainer {
+  background-color: #c4c4c4;
+  height: 100vh;
 }
-
-#Articles td,
-#Articles th {
-  border: 0px solid #ddd;
-  padding: 8px;
-}
-
-#Articles tr:hover {
-  background-color: #ddd;
-}
-
-#Articles th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04aa6d;
+#update {
+  width: 120px;
+  height: 30px;
   color: white;
+  background-color: #4b1a41;
+}
+#updatedeletediv {
+  font-size: 25px;
+  width: 100%;
+  /* background-color: aquamarine; */
+}
+#deleteicon {
+  margin-left: 100px;
+}
+#logoutitem {
+  margin-top: 200px;
+  font-size: 25px;
+}
+#logout {
+  border: none;
+  background-color: inherit;
+  color: white;
+  font-size: 22px;
 }

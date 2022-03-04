@@ -50,20 +50,20 @@
           </li>
           <li>
             <a href="">
-              <span><i class="fa-solid fa-container-storage"></i></span>
+              <span><i class="fa-brands fa-firstdraft"></i></span>
               <span>Draft</span>
             </a>
           </li>
           <li>
             <a href="/index.html">
-              <span><i class="fa-solid fa-message"></i></span>
+              <span><i class="fa-solid fa-copy"></i></span>
               <span>Pages</span>
             </a>
           </li>
-          <li>
+          <li id="logoutitem">
             
-              <span><i class="fa-solid fa-message"></i></span>
-              <button onclick= logout()>Logout</button>
+              <span><i class="fa-solid fa-right-from-bracket"></i></span>
+              <button onclick= logout() id="logout">Logout</button>
             </a>
           </li>
         </ul>
@@ -75,7 +75,7 @@
         <div class="dashboard-cards">
           <div class="card-single">
             <div class="card-body">
-              <div class="card-icon">
+              <div class="card-icon" id="card-icon1">
                 <i class="fa-solid fa-file-lines"></i>
               </div>
               <div class="card-content">
@@ -89,7 +89,7 @@
           </div>
           <div class="card-single">
             <div class="card-body">
-              <div class="card-icon">
+              <div class="card-icon" id="card-icon2">
                 <i class="fa-solid fa-file-lines"></i>
               </div>
               <div class="card-content">
@@ -104,7 +104,7 @@
 
           <div class="card-single">
             <div class="card-body">
-              <div class="card-icon">
+              <div class="card-icon" id="card-icon3">
                 <i class="fa-solid fa-file-lines"></i>
               </div>
               <div class="card-content">
@@ -121,8 +121,8 @@
     </div>
     <div class="post-container">
       <h1>Recent Article</h1>
-      <ul class="blog-container">
-        <li class="blog-list" id="blogarticleid">
+      <ul class="blog-container" style="margin-top: 10px;">
+        <li class="blog-list" id="blogarticleid" style=" width: 88%;margin-right: 10%;">
           <a href="/pages/viewblog.html">
             <div class="blog-info">
               <div class="blog-image">
@@ -145,7 +145,7 @@
             </div>
           </a>
         </li>
-        <li class="blog-list">
+        <li class="blog-list" style=" width: 88%;margin-right: 10%;">
           <a href="viewblog.html">
             <div class="blog-info">
               <div class="blog-image">
@@ -169,7 +169,7 @@
           </a>
         </li>
 
-        <li class="blog-list">
+        <li class="blog-list" style=" width: 88%;margin-right: 10%;">
           <a href="/pages/viewblog.html">
             <div class="blog-info">
               <div class="blog-image">
