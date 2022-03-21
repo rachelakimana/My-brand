@@ -62,7 +62,7 @@ function renderAticles(doc) {
 //     renderAticles(doc);
 //   });
 // });
-fetch("http://localhost:3000/api/blog")
+fetch("https://my-brand-website.herokuapp.com/api/blog")
   .then((response) => response.json())
   .then((data) => {
     data.allArticle.forEach((doc) => {
