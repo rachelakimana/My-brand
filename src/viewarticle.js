@@ -1,9 +1,10 @@
 //variable to access database
-const db = firestore.collection("Articles");
+// const db = firestore.collection("Articles");
 
 // render data from firestore database to form
 function renderAticles(doc) {
   // get form values
+  console.log(doc);
   var blogcontainer = document.querySelector(".blog-container");
   var bloglist = document.createElement("li");
   var bloginfo = document.createElement("div");
@@ -42,26 +43,32 @@ function renderAticles(doc) {
   blogdescription.appendChild(paragraph);
   blogdescription.appendChild(readMore);
 
-  bloglist.setAttribute("articleid", doc.id);
-  header2.textContent = doc.data().title;
-  spandate.textContent = doc.data().date;
-  paragraph.textContent = doc.data().content.substring(0, 200);
+  bloglist.setAttribute("articleid", doc._id);
+  header2.textContent = doc.title;
+  spandate.textContent = doc.createdAt;
+  paragraph.textContent = doc.content.substring(0, 200);
   readMore.textContent = "Read More";
   readMore.addEventListener("click", (e) => {
     e.preventDefault();
-    location.href = `/pages/viewblog.html#${doc.id}`;
+    location.href = `/pages/viewblog.html#${doc._id}`;
   });
 }
 
-db.get().then((snapshot) => {
-  snapshot.docs.forEach((doc) => {
-    const docData = doc.data();
-    // console.log(docData);
+// db.get().then((snapshot) => {
+//   snapshot.docs.forEach((doc) => {
+//     const docData = doc.data();
+//     // console.log(docData);
 
-    renderAticles(doc);
+//     renderAticles(doc);
+//   });
+// });
+fetch("http://localhost:3000/api/blog")
+  .then((response) => response.json())
+  .then((data) => {
+    data.allArticle.forEach((doc) => {
+      renderAticles(doc);
+    });
   });
-});
-
 // function myFunction() {
 //   document.getElementById("articleid").reset();
 //   document.getElementById("content").value = "";

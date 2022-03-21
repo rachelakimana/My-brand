@@ -11,11 +11,21 @@ const headerowner = document.getElementById("blogowner");
 headerdate.append("posted on:", createdDate, "by", headerowner);
 headerowner.textContent = "Akimana Rachel";
 
-db.doc(id)
-  .get()
-  .then((doc) => {
-    title.innerHTML = doc.data().title;
-    createdDate.innerHTML = doc.data().date;
+fetch(`http://localhost:3000/api/blog/${id}`)
+  .then((response) => response.json())
+  .then((blog) => {
+    console.log(blog);
+    title.innerHTML = blog.title;
+    createdDate.innerHTML = blog.createdAt;
     //     image.src = res.data().image
-    contentbody.innerHTML = doc.data().content;
+    contentbody.innerHTML = blog.content;
   });
+
+// db.doc(id)
+//   .get()
+//   .then((doc) => {
+//     title.innerHTML = doc.data().title;
+//     createdDate.innerHTML = doc.data().date;
+//     //     image.src = res.data().image
+//     contentbody.innerHTML = doc.data().content;
+//   });

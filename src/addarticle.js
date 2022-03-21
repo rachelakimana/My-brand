@@ -1,5 +1,5 @@
 //variable to access database
-const db = firestore.collection("Articles");
+// const db = firestore.collection("Articles");
 
 // get submit form
 let submitButton = document.getElementById("submit");
@@ -13,13 +13,18 @@ submitButton.addEventListener("click", (e) => {
   let createdDate = document.getElementById("cdate").value;
   let content = document.getElementById("content").value;
 
-  // save form data to firebase
-  db.doc()
-    .set({
+  // add blog
+  fetch("http://localhost:3000/api/blog/add", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `bearer ${localStorage.getItem("jwtToken")}`,
+    },
+    body: JSON.stringify({
       title: title,
-      date: createdDate,
       content: content,
-    })
+    }),
+  })
     .then(() => {
       console.log("Data saved");
       window.location.reload();
@@ -27,6 +32,21 @@ submitButton.addEventListener("click", (e) => {
     .catch((error) => {
       console.log(error);
     });
+
+  // save form data to firebase
+  // db.doc()
+  //   .set({
+  //     title: title,
+  //     date: createdDate,
+  //     content: content,
+  //   })
+  //   .then(() => {
+  //     console.log("Data saved");
+  //     window.location.reload();
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
 });
 
 // // variables

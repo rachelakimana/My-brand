@@ -1,5 +1,5 @@
 //variable to access database
-const db = firestore.collection("Articles");
+// const db = firestore.collection("Articles");
 
 // render data from firestore database to form
 function renderAticles(doc) {
@@ -52,34 +52,60 @@ function renderAticles(doc) {
   blogdescription.appendChild(articlecontent);
   blogdescription.appendChild(updatedeletearticle);
 
-  bloglist.setAttribute("blogarticleid", doc.id);
-  articletitle.textContent = doc.data().title;
-  spandate.textContent = doc.data().date;
-  articlecontent.textContent = doc.data().content.substring(0, 200);
+  bloglist.setAttribute("blogarticleid", doc._id);
+  articletitle.textContent = doc.title;
+  spandate.textContent = doc.createdAt;
+  articlecontent.textContent = doc.content.substring(0, 200);
   icondelete.className = "fa-solid fa-trash-can";
   iconupdate.className = "fa-solid fa-pen";
 
   // deleting data
+
   icondelete.addEventListener("click", (e) => {
-    let id = doc.id;
+    let id = doc._id;
+
+    fetch(`http://localhost:3000/api/blog/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `bearer ${localStorage.getItem("jwtToken")}`,
+      },
+      // body: JSON.stringify(null),
+    });
     console.log(id);
-    firestore.collection("Articles").doc(id).delete();
   });
+  // Udating data
 
   iconupdate.addEventListener("click", (e) => {
     e.preventDefault();
-    location.href = `/pages/updateblog.html#${doc.id}`;
+    let id = doc._id;
+    location.href = `/pages/updateblog.html#${id}`;
   });
+
+  // // deleting data
+  // icondelete.addEventListener("click", (e) => {
+  //   let id = doc.id;
+  //   console.log(id);
+  //   firestore.collection("Articles").doc(id).delete();
+  // });
 }
 
-db.get().then((snapshot) => {
-  snapshot.docs.forEach((doc) => {
-    const docData = doc.data();
-    // console.log(docData);
-
-    renderAticles(doc);
+fetch("http://localhost:3000/api/blog")
+  .then((response) => response.json())
+  .then((data) => {
+    data.allArticle.forEach((doc) => {
+      renderAticles(doc);
+    });
   });
-});
+
+// db.get().then((snapshot) => {
+//   snapshot.docs.forEach((doc) => {
+//     const docData = doc.data();
+//     // console.log(docData);
+
+//     renderAticles(doc);
+//   });
+// });
 
 // db.onSnapshot((snapshot) => {
 //   let changes = snapshot.docChanges();
