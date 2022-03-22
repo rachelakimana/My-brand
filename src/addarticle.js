@@ -14,7 +14,7 @@ submitButton.addEventListener("click", (e) => {
   let content = document.getElementById("content").value;
 
   // add blog
-  fetch("http://localhost:3000/api/blog/add", {
+  fetch("https://my-brand-website.herokuapp.com/api/blog/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -7,7 +7,7 @@ console.log(id);
 // let id = doc.id;
 // console.log(id);
 // firestore.collection("Articles").doc(id);
-fetch(`http://localhost:3000/api/blog/${id}`)
+fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`)
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
@@ -18,7 +18,7 @@ fetch(`http://localhost:3000/api/blog/${id}`)
     let buttonupdate = document.getElementById("update");
     buttonupdate.addEventListener("click", (e) => {
       e.preventDefault();
-      fetch(`http://localhost:3000/api/blog/${id}`, {
+      fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

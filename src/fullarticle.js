@@ -11,7 +11,7 @@ const headerowner = document.getElementById("blogowner");
 headerdate.append("posted on:", createdDate, "by", headerowner);
 headerowner.textContent = "Akimana Rachel";
 
-fetch(`http://localhost:3000/api/blog/${id}`)
+fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`)
   .then((response) => response.json())
   .then((blog) => {
     console.log(blog);

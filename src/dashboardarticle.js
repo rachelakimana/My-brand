@@ -64,7 +64,7 @@ function renderAticles(doc) {
   icondelete.addEventListener("click", (e) => {
     let id = doc._id;
 
-    fetch(`http://localhost:3000/api/blog/${id}`, {
+    fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -90,10 +90,10 @@ function renderAticles(doc) {
   // });
 }
 
-fetch("http://localhost:3000/api/blog")
+fetch("https://my-brand-website.herokuapp.com/api/blog")
   .then((response) => response.json())
   .then((data) => {
-    data.allArticle.forEach((doc) => {
+    data.forEach((doc) => {
       renderAticles(doc);
     });
   });
