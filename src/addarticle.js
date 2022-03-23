@@ -14,6 +14,7 @@ submitButton.addEventListener("click", (e) => {
   let content = document.getElementById("content").value;
 
   // add blog
+  const activeToken = localStorage.getItem("jwtToken");
   fetch("https://my-brand-website.herokuapp.com/api/blog/add", {
     method: "POST",
     headers: {
@@ -24,14 +25,15 @@ submitButton.addEventListener("click", (e) => {
       title: title,
       content: content,
     }),
-  })
-    .then(() => {
-      console.log("Data saved");
-      window.location.reload();
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  });
+  if (activeToken) {
+    alert("Data saved");
+    window.location.reload();
+  }
+  if (!activeToken) {
+    alert("Action denied, you have first to login");
+    location.href = "/pages/dashboard.html";
+  }
 
   // save form data to firebase
   // db.doc()

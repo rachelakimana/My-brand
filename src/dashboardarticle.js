@@ -1,3 +1,9 @@
+window.onload = function () {
+  if (localStorage.getItem("jwtToken") === null) {
+    location.href = "/pages/login.html";
+  }
+};
+
 //variable to access database
 // const db = firestore.collection("Articles");
 
@@ -63,17 +69,23 @@ function renderAticles(doc) {
 
   icondelete.addEventListener("click", (e) => {
     let id = doc._id;
-
+    const activeToken = localStorage.getItem("jwtToken");
     fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `bearer ${localStorage.getItem("jwtToken")}`,
+        Authorization: `bearer ${activeToken}`,
       },
-      // body: JSON.stringify(null),
     });
-    console.log(id);
+    if (activeToken) {
+      alert("Article deleted");
+      window.location.reload();
+    }
+    if (!activeToken) {
+      alert("Action denied, you have first to login");
+    }
   });
+
   // Udating data
 
   iconupdate.addEventListener("click", (e) => {
