@@ -34,22 +34,21 @@ submitButton.addEventListener("click", (e) => {
     alert("Action denied, you have first to login");
     location.href = "/pages/dashboard.html";
   }
-
-  // save form data to firebase
-  // db.doc()
-  //   .set({
-  //     title: title,
-  //     date: createdDate,
-  //     content: content,
-  //   })
-  //   .then(() => {
-  //     console.log("Data saved");
-  //     window.location.reload();
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
 });
+// save form data to firebase
+// db.doc()
+//   .set({
+//     title: title,
+//     date: createdDate,
+//     content: content,
+//   })
+//   .then(() => {
+//     console.log("Data saved");
+//     window.location.reload();
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 // // variables
 // var imagename, imageurl;
