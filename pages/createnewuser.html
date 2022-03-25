@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/login.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <title>Login form</title>
   </head>
   <body>
     <div class="loginimage-container">
       <img src="/images/login-background.png" alt="" />
-      <span>Login Form</span>
+      <span>Create New User</span>
     </div>
     <div class="loginform-container">
       <div class="form-container">
         <form id="loginform">
           <div class="signindiv-container">
             <div class="first-signindiv">
-              <label for="useremail">Email</label><br />
+              <label for="useremail">Email Address</label><br />
               <input
                 type="text"
                 id="useremail"
@@ -35,21 +35,9 @@
                 required
               /><br />
             </div>
-            <div class="style-checkbox">
-              <div class="second-signindiv">
-                <input
-                  type="checkbox"
-                  id="check-box"
-                  name="checkbox"
-                  value="checked"
-                />
-                <label for="signed">Stay signed in</label>
-              </div>
-              <div class="p-pswd"><p>Forgot password?</p></div>
-            </div>
+
             <div class="submit">
-              <button id="loginbutton">Login</button> <br /><br />
-              <a href="/index.html">Go back</a>
+              <button id="loginbutton">Create</button>
             </div>
           </div>
         </form>

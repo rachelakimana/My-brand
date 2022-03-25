@@ -2,7 +2,7 @@
   height: 60px;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
@@ -11,20 +11,22 @@
 .nav-mobile {
   display: none;
 }
+.nav-menuu {
+  display: none;
+}
 
 .nav-container h1 {
-  margin-left: 120px;
+  /* margin-left: 80px; */
 }
 .nav-menu {
   margin-left: 30px;
 }
 .nav-container nav {
   display: flex;
-  flex-direction: row;
 }
 
 .nav-menu a {
-  font-size: 30px;
+  font-size: 28px;
   color: #000000;
   text-decoration: none;
   margin-left: 60px;
@@ -39,13 +41,14 @@
   padding-top: 4%;
   background-color: #4b1a41;
   display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: auto;
   flex-direction: row;
   width: 100%;
   height: 380px;
 }
 .me-info {
-  margin-left: 120px;
   color: #ffffff;
   width: 50%;
 }
@@ -221,15 +224,17 @@
 
 @media screen and (max-width: 960px) {
   .nav-container h1 {
-    margin-left: 50px;
+    font-size: 25px;
+    margin-left: 0px;
   }
   .nav-menu {
     margin-left: 16px;
   }
   .nav-menu a {
-    font-size: 20px;
-    padding-left: 20px;
+    font-size: 23px;
+    margin-left: 40px;
   }
+
   .profile-info {
     width: 100%;
     height: 300px;
@@ -327,6 +332,13 @@
 
   .sevices-p {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .nav-menu a {
+    font-size: 20px;
+    margin-left: 30px;
   }
 }
 

@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/stylecontact.css" />
     <link href="/fontawesome/css/all.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <title>Contact me</title>
   </head>
 
@@ -90,8 +93,8 @@
                 /><br /><br /><br />
                 <input
                   type="text"
-                  id="phone-number"
-                  name="phone-number"
+                  id="phonenumber"
+                  name="phonenumber"
                   placeholder="Your phone number"
                 />
               </div>
@@ -99,7 +102,7 @@
             <p id="pmessage">Write your message here</p>
             <input type="text" id="message" name="message" placeholder="" />
             <br />
-            <input type="submit" id="button-send" value="Send" />
+            <button id="buttonsend">Send</button>
           </form>
         </div>
       </div>
@@ -120,6 +123,8 @@
       </div>
     </div>
   </body>
+  <script src="/src/app.js"></script>
+  <script src="/src/addmessage.js"></script>
   <script>
     function myFunction() {
       var x = document.getElementById("pop-menu");

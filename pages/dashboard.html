@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/fontawesome/css/all.css" rel="stylesheet" />
     <link href="/css/dashboard.css" rel="stylesheet" />
+    <link href="/css/blogstyle.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
     <title>Dashboard</title>
   </head>
@@ -21,19 +26,19 @@
         <ul>
           <li>
             <a href="">
-              <span><i class="fa-solid fa-message"></i></span>
+              <span><i class="fa-solid fa-table-columns"></i></span>
               <span>Recent</span>
             </a>
           </li>
           <li>
             <a href="/pages/blogpost.html">
-              <span><i class="fa-solid fa-message"></i></span>
+              <span><i class="fa-solid fa-book"></i></span>
               <span>New Post</span>
             </a>
           </li>
           <li>
-            <a href="">
-              <span><i class="fa-solid fa-message"></i></span>
+            <a href="/pages/readcomment.html">
+              <span><i class="fa-solid fa-comment"></i></span>
               <span>comments</span>
             </a>
           </li>
@@ -45,20 +50,20 @@
           </li>
           <li>
             <a href="">
-              <span><i class="fa-solid fa-message"></i></span>
+              <span><i class="fa-brands fa-firstdraft"></i></span>
               <span>Draft</span>
             </a>
           </li>
           <li>
             <a href="/index.html">
-              <span><i class="fa-solid fa-message"></i></span>
+              <span><i class="fa-solid fa-copy"></i></span>
               <span>Pages</span>
             </a>
           </li>
-          <li>
-            <a href="">
-              <span><i class="fa-solid fa-message"></i></span>
-              <span>Logout</span>
+          <li id="logoutitem">
+            
+              <span><i class="fa-solid fa-right-from-bracket"></i></span>
+              <button onclick= logout() id="logout">Logout</button>
             </a>
           </li>
         </ul>
@@ -70,7 +75,7 @@
         <div class="dashboard-cards">
           <div class="card-single">
             <div class="card-body">
-              <div class="card-icon">
+              <div class="card-icon" id="card-icon1">
                 <i class="fa-solid fa-file-lines"></i>
               </div>
               <div class="card-content">
@@ -84,7 +89,7 @@
           </div>
           <div class="card-single">
             <div class="card-body">
-              <div class="card-icon">
+              <div class="card-icon" id="card-icon2">
                 <i class="fa-solid fa-file-lines"></i>
               </div>
               <div class="card-content">
@@ -99,7 +104,7 @@
 
           <div class="card-single">
             <div class="card-body">
-              <div class="card-icon">
+              <div class="card-icon" id="card-icon3">
                 <i class="fa-solid fa-file-lines"></i>
               </div>
               <div class="card-content">
@@ -116,158 +121,87 @@
     </div>
     <div class="post-container">
       <h1>Recent Article</h1>
+      <ul class="blog-container" style="margin-top: 10px;">
+        <!-- <li class="blog-list" id="blogarticleid" style=" width: 88%;margin-right: 10%;">
+          <a href="/pages/viewblog.html">
+            <div class="blog-info">
+              <div class="blog-image">
+                <img src="/images/plugin1.png" alt="" />
+                <span>Image description</span>
+              </div>
+              <div class="blog-description">
+                <h2>Lorem Ipsum</h2>
+                <h5>
+                  Posted on: <span>February 15</span> by
+                  <span>Akimana Rachel</span>
+                </h5>
+                <p class="description">
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                </p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="blog-list" style=" width: 88%;margin-right: 10%;">
+          <a href="viewblog.html">
+            <div class="blog-info">
+              <div class="blog-image">
+                <img src="/images/plugin2.png" alt="" />
+                <span>Image description</span>
+              </div>
+              <div class="blog-description">
+                <h2>Lorem Ipsum</h2>
+                <h5>
+                  Posted on: <span>February 15</span> by
+                  <span>Akimana Rachel</span>
+                </h5>
+                <p class="description">
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                </p>
+              </div>
+            </div>
+          </a>
+        </li>
 
-      <table id="Articles">
-        <tr>
-          <th>number</th>
-          <th>image</th>
-          <th>date</th>
-          <th>title</th>
-          <th>content</th>
-          <th>update</th>
-          <th>Delete</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>
-            <img
-              src="/images/plugin1.png"
-              style="width: 120px; height: 80px"
-              alt=""
-            />
-            <span>unspash Image</span>
-          </td>
-          <td>january 10 2022</td>
-          <td>Germany</td>
-          <td>
-            It has survived not only five centuries, but also the leap into
-            electronic typesetting, It has survived not only five centuries, but
-            also the leap into electronic typesetting.
-          </td>
-          <td><i class="fa-solid fa-pen"></i></td>
-          <td><i class="fa-solid fa-trash-can"></i></td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>
-            <img
-              src="/images/plugin1.png"
-              style="width: 120px; height: 80px"
-              alt=""
-            />
-            <span>unspash Image</span>
-          </td>
-          <td>january 10 2022</td>
-          <td>Germany</td>
-          <td>
-            It has survived not only five centuries, but also the leap into
-            electronic typesetting, It has survived not only five centuries, but
-            also the leap into electronic typesetting.
-          </td>
-          <td><i class="fa-solid fa-pen"></i></td>
-          <td><i class="fa-solid fa-trash-can"></i></td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>
-            <img
-              src="/images/plugin1.png"
-              style="width: 120px; height: 80px"
-              alt=""
-            />
-            <span>unspash Image</span>
-          </td>
-          <td>january 10 2022</td>
-          <td>Germany</td>
-          <td>
-            It has survived not only five centuries, but also the leap into
-            electronic typesetting, It has survived not only five centuries, but
-            also the leap into electronic typesetting.
-          </td>
-          <td><i class="fa-solid fa-pen"></i></td>
-          <td><i class="fa-solid fa-trash-can"></i></td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>
-            <img
-              src="/images/plugin1.png"
-              style="width: 120px; height: 80px"
-              alt=""
-            />
-            <span>unspash Image</span>
-          </td>
-          <td>january 10 2022</td>
-          <td>Germany</td>
-          <td>
-            It has survived not only five centuries, but also the leap into
-            electronic typesetting, It has survived not only five centuries, but
-            also the leap into electronic typesetting.
-          </td>
-          <td><i class="fa-solid fa-pen"></i></td>
-          <td><i class="fa-solid fa-trash-can"></i></td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>
-            <img
-              src="/images/plugin1.png"
-              style="width: 120px; height: 80px"
-              alt=""
-            />
-            <span>unspash Image</span>
-          </td>
-          <td>january 10 2022</td>
-          <td>Germany</td>
-          <td>
-            It has survived not only five centuries, but also the leap into
-            electronic typesetting, It has survived not only five centuries, but
-            also the leap into electronic typesetting.
-          </td>
-          <td><i class="fa-solid fa-pen"></i></td>
-          <td><i class="fa-solid fa-trash-can"></i></td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>
-            <img
-              src="/images/plugin1.png"
-              style="width: 120px; height: 80px"
-              alt=""
-            />
-            <span>unspash Image</span>
-          </td>
-          <td>january 10 2022</td>
-          <td>Germany</td>
-          <td>
-            It has survived not only five centuries, but also the leap into
-            electronic typesetting, It has survived not only five centuries, but
-            also the leap into electronic typesetting.
-          </td>
-          <td><i class="fa-solid fa-pen"></i></td>
-          <td><i class="fa-solid fa-trash-can"></i></td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>
-            <img
-              src="/images/plugin1.png"
-              style="width: 120px; height: 80px"
-              alt=""
-            />
-            <span>unspash Image</span>
-          </td>
-          <td>january 10 2022</td>
-          <td>Germany</td>
-          <td>
-            It has survived not only five centuries, but also the leap into
-            electronic typesetting, It has survived not only five centuries, but
-            also the leap into electronic typesetting.
-          </td>
-          <td><i class="fa-solid fa-pen"></i></td>
-          <td><i class="fa-solid fa-trash-can"></i></td>
-        </tr>
-      </table>
+        <li class="blog-list" style=" width: 88%;margin-right: 10%;">
+          <a href="/pages/viewblog.html">
+            <div class="blog-info">
+              <div class="blog-image">
+                <img src="/images/plugin1.png" alt="" />
+                <span>Image description</span>
+              </div>
+              <div class="blog-description">
+                <h2>Lorem Ipsum</h2>
+                <h5>
+                  Posted on: <span>February 15</span> by
+                  <span>Akimana Rachel</span>
+                </h5>
+                <p class="description">
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                </p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <div class="blog-detail"></div> -->
+      </ul>
+
+      <!-- <i class="fa-solid fa-pen"></i> -->
     </div>
+    
+    <script src="/src/app.js"></script>
+    <script src="/src/dashboardarticle.js"></script>
+    <script src="/src/auth.js"></script>
+    <script src="/src/logout.js"></script>
   </body>
 </html>

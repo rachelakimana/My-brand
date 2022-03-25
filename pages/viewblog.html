@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/viewblog.css" />
     <link href="/fontawesome/css/all.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <title>viewblog</title>
   </head>
   <body>
@@ -47,16 +50,19 @@
     <div class="blog-container">
       <div class="blog-info">
         <div class="blog-image">
-          <img src="/images/plugin1.png" alt="" />
-          <span>Image description</span>
+          <img
+            src="https://2img.net/h/media02.hongkiat.com/nature-photography/autumn-poolside.jpg"
+            alt=""
+          />
+          <span>Beauty of the nature</span>
         </div>
         <div class="blog-description">
-          <h2>Lorem Ipsum</h2>
-          <h5>
-            Posted on: <span>February 15</span> by
-            <span>Akimana Rachel</span>
+          <h2 id="title">Lorem Ipsum</h2>
+          <h5 id="hdate">
+            Posted on: <span id="date">February 15</span> by
+            <span id="blogowner">Akimana Rachel</span>
           </h5>
-          <p class="description">
+          <p class="description" id="fullcontent">
             It has survived not only five centuries, but also the leap into
             electronic typesetting, remaining essentially unchanged. It has
             survived not only five centuries, but also the leap into electronic
@@ -83,13 +89,19 @@
         <h1>comments or questions?</h1>
 
         <form id="usrform">
-          Email: <input type="text" name="usrname" /><br />
+          Email: <input type="text" id="usremail" name="email" /><br />
 
           <br />
-          <textarea rows="5" cols="50" name="comment" form="usrform">
+          <textarea
+            rows="5"
+            cols="50"
+            name="comment"
+            form="usrform"
+            id="usrcomment"
+          >
 Write your comment here...</textarea
           ><br />
-          <input type="submit" id="submit" />
+          <button id="submitcomnt">Send</button>
         </form>
       </div>
     </div>
@@ -108,7 +120,9 @@ Write your comment here...</textarea
         <i class="fa-brands fa-instagram"></i>
       </div>
     </div>
-
+    <script src="/src/app.js"></script>
+    <script src="/src/fullarticle.js"></script>
+    <script src="/src/addcomment.js"></script>
     <script>
       function myFunction() {
         var x = document.getElementById("pop-menu");
