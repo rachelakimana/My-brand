@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../css/blogstyle.css" />
     <link href="../fontawesome/css/all.css" rel="stylesheet" />
     <title>Blog</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   </head>
   <body>
     <div class="nav-container">
@@ -43,8 +46,8 @@
         <a href="/pages/blog.html" class="nav-dis">Blog</a>
       </div>
     </nav>
-    <div class="blog-container">
-      <div class="blog-list">
+    <ul class="blog-container">
+      <!-- <li class="blog-list" id="articleid">
         <a href="/pages/viewblog.html">
           <div class="blog-info">
             <div class="blog-image">
@@ -66,8 +69,8 @@
             </div>
           </div>
         </a>
-      </div>
-      <div class="blog-list">
+      </li>
+      <li class="blog-list">
         <a href="viewblog.html">
           <div class="blog-info">
             <div class="blog-image">
@@ -89,31 +92,7 @@
             </div>
           </div>
         </a>
-      </div>
-
-      <div class="blog-list">
-        <a href="/pages/viewblog.html">
-          <div class="blog-info">
-            <div class="blog-image">
-              <img src="/images/plugin3.png" alt="" />
-              <span>Image description</span>
-            </div>
-            <div class="blog-description">
-              <h2>Lorem Ipsum</h2>
-              <h5>
-                Posted on: <span>February 15</span> by
-                <span>Akimana Rachel</span>
-              </h5>
-              <p class="description">
-                It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
+      </li>
 
       <div class="blog-list">
         <a href="/pages/viewblog.html">
@@ -138,32 +117,8 @@
           </div>
         </a>
       </div>
-      <div class="blog-list">
-        <a href="/pages/viewblog.html">
-          <div class="blog-info">
-            <div class="blog-image">
-              <img src="/images/plugin1.png" alt="" />
-              <span>Image description</span>
-            </div>
-            <div class="blog-description">
-              <h2>Lorem Ipsum</h2>
-              <h5>
-                Posted on: <span>February 15</span> by
-                <span>Akimana Rachel</span>
-              </h5>
-              <p class="description">
-                It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="blog-detail"></div>
-    </div>
+      <div class="blog-detail"></div> -->
+    </ul>
     <div class="my-footer">
       <div class="footer-awesome">
         <p>GET IN TOUCH</p>
@@ -179,6 +134,8 @@
         <i class="fa-brands fa-instagram"></i>
       </div>
     </div>
+    <script src="/src/app.js"></script>
+    <script src="/src/viewarticle.js"></script>
     <script>
       function myFunction() {
         var x = document.getElementById("pop-menu");

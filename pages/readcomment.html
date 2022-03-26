@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/dashboard.css" />
-    <link rel="stylesheet" href="/css/readmessage.css" />
+    <link rel="stylesheet" href="/css/readcomment.css" />
     <link href="/fontawesome/css/all.css" rel="stylesheet" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
@@ -69,45 +69,38 @@
       </div>
     </div>
 
-    <div class="messagecontainer">
-      <h2>Read Message from contact</h2>
+    <div class="commentcontainer">
+      <h2>Read Comments</h2>
 
-      <ul id="messagewrapper">
-        <li class="messagelist" id="messageid">
-        <div id="useridentity">
-              <h3><span>jolie</span><span id="secondname">nice</span></h3>
-             <p>vaa@gmail.com</p>
-             <p>0783445553</p>
-            </div>
-                <div id="messagedetail">
-                <p id="description">
-                  It has survived not only five centuries, but also the leap into
-                  electronic typesetting, remaining essentially unchanged. It has
-                  survived not only five centuries, but also the leap into
-                  electronic typesetting, remaining essentially unchanged.
-                </p>
-              </div>
-              <div id="trashicon"><i class="fa-solid fa-trash-can"></i></div>
+      <ul id="commentwrapper">
+        <li class="commentlist" id="commentid">
+          <div id="comment">
+            <p>weeeeeee@gmail.com</p>
+            <p id="description">
+              It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
+            </p>
+          </div>
+          <div id="trashicon"><i class="fa-solid fa-trash-can"></i></div>
         </li>
-        <li class="messagelist" id="messageid">
-          <div id="useridentity">
-                <h3><span>jolie</span><span id="secondname">nice</span></h3>
-               <p>vaaaaaaaaaaaaaa@gmail.com</p>
-               <p>0783445553</p>
-              </div>
-                  <div id="messagedetail">
-                  <p id="description">
-                    It has survived not only five centuries, but also the leap into
-                    electronic typesetting, remaining essentially unchanged. It has
-                    survived not only five centuries, but also the leap into
-                    electronic typesetting, remaining essentially unchanged.
-                  </p>
-                </div>
-                <div id="trashicon"><i class="fa-solid fa-trash-can"></i></div>
-          </li>
+        <li class="commentlist" id="commentid">
+          <div id="comment">
+            <p>weeeeeee@gmail.com</p>
+            <p id="description">
+              It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
+            </p>
+          </div>
+          <div id="trashicon"><i class="fa-solid fa-trash-can"></i></div>
+        </li>
+      </ul>
     </div>
     <script src="/src/app.js"></script>
-    <script src="/src/readmessage.js"></script>
+    <script src="/src/readcomment.js"></script>
     <script src="/src/auth.js"></script>
     <script src="/src/logout.js"></script>
   </body>

@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/css/dashboard.css" />
     <link href="/fontawesome/css/all.css" rel="stylesheet" />
     <title>Blogpost</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   </head>
   <body>
     <div class="siderbar">
@@ -21,64 +25,57 @@
         <ul>
           <li>
             <a href="/pages/dashboard.html">
-              <span><i class="fa-solid fa-message"></i></span>
+              <span><i class="fa-solid fa-table-columns"></i></span>
               <span>Recent</span>
             </a>
           </li>
           <li>
-            <a href="">
-              <span><i class="fa-solid fa-message"></i></span>
+            <a href="/pages/blogpost.html">
+              <span><i class="fa-solid fa-book"></i></span>
               <span>New Post</span>
             </a>
           </li>
           <li>
-            <a href="">
-              <span><i class="fa-solid fa-message"></i></span>
+            <a href="/pages/readcomment.html">
+              <span><i class="fa-solid fa-comment"></i></span>
               <span>comments</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="/pages/readmessage.html">
               <span><i class="fa-solid fa-message"></i></span>
               <span>Message</span>
             </a>
           </li>
           <li>
             <a href="">
-              <span><i class="fa-solid fa-message"></i></span>
+              <span><i class="fa-brands fa-firstdraft"></i></span>
               <span>Draft</span>
             </a>
           </li>
           <li>
-            <a href="">
-              <span><i class="fa-solid fa-message"></i></span>
+            <a href="/index.html">
+              <span><i class="fa-solid fa-copy"></i></span>
               <span>Pages</span>
             </a>
           </li>
-          <li>
-            <a href="">
-              <span><i class="fa-solid fa-message"></i></span>
-              <span>Logout</span>
+          <li id="logoutitem">
+            
+              <span><i class="fa-solid fa-right-from-bracket"></i></span>
+              <button onclick= logout() id="logout">Logout</button>
             </a>
           </li>
         </ul>
       </div>
     </div>
     <div class="blogpost-container">
-      <div class="b-action">
+      <!-- <div class="b-action">
         <button id="savebtn" type="button">save</button>
         <button id="Publishbtn" type="button">Publish</button>
-      </div>
-      <form>
+      </div> -->
+      <form id="articleid">
         <div class="postform-container">
           <div class="first-postform">
-            <label for="id">Id</label><br />
-            <input
-              type="number"
-              name="id"
-              id="article-number"
-              placeholder=""
-            /><br /><br />
             <label for="title">Title</label><br />
             <input
               type="text"
@@ -86,14 +83,8 @@
               id="title"
               placeholder=""
             /><br /><br />
-            <label for="image" id="image">Upload Article image</label
-            ><br /><br />
-            <input
-              type="file"
-              name="image"
-              id="image-url"
-              placeholder=""
-            /><br /><br />
+            <!-- <label for="imagetitle">Upload Article image</label><br /><br />
+
             <label for="imgdescription">Image description</label><br />
             <input
               type="text"
@@ -101,23 +92,38 @@
               id="imgname"
               placeholder="description"
             /><br /><br />
+            <img id="output" name="myimage" />
+            <input type="file" id="photo" />
+
+            <input id="showprogress" style="background-color: blue" />
+            <br /> -->
+            <!-- <button id="upload" onclick="uploadImage()">upload image</button> -->
             <label for="date">date</label><br />
             <input
               type="datetime-local"
-              id="date"
+              id="cdate"
               name="date"
               placeholder=""
             /><br /><br />
           </div>
           <div class="second-postform"></div>
           <p id="pmessage">Article Content</p>
-          <textarea rows="20" cols="100" name="comment" form="usrform">
+          <textarea
+            rows="20"
+            cols="100"
+            name="content"
+            id="content"
+            form="usrform"
+          >
                 Write your content here...</textarea
           ><br />
         </div>
-
-        <!-- <input type="submit" id="button-send" value="Send" /> -->
+        <button type="submit" id="submit">submit</button>
       </form>
     </div>
+    <script src="/src/app.js"></script>
+    <script src="/src/addarticle.js"></script>
+    <script src="/src/auth.js"></script>
+    <script src="/src/logout.js"></script>
   </body>
 </html>
