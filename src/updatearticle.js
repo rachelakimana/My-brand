@@ -39,7 +39,7 @@ fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`)
         location.href = "/My-brand/pages/dashboard.html";
       } else {
         alert("Action denied, you have first to login");
-        location.href = "/pages/login.html";
+        location.href = "/My-brand/pages/login.html";
       }
       // db.doc(id)
       //   .update({
