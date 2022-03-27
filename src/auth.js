@@ -1,6 +1,6 @@
 auth.onAuthStateChanged((user) => {
   if (user) {
   } else {
-    location.href = "/pages/login.html";
+    location.href = "/My-brand/pages/login.html";
   }
 });

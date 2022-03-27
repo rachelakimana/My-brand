@@ -32,7 +32,7 @@ submitButton.addEventListener("click", (e) => {
   }
   if (!activeToken) {
     alert("Action denied, you have first to login");
-    location.href = "/pages/dashboard.html";
+    location.href = "/My-brand/pages/dashboard.html";
   }
 });
 // save form data to firebase
