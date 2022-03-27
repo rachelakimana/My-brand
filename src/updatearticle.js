@@ -36,7 +36,7 @@ fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`)
         date.value = "";
         content.value = "";
         alert("Blog updated");
-        location.href = "/pages/dashboard.html";
+        location.href = "/My-brand/pages/dashboard.html";
       } else {
         alert("Action denied, you have first to login");
         location.href = "/pages/login.html";

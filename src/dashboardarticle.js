@@ -1,6 +1,6 @@
 window.onload = function () {
   if (localStorage.getItem("jwtToken") === null) {
-    location.href = "/pages/login.html";
+    location.href = "/My-brand/pages/login.html";
   }
 };
 

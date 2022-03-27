@@ -19,7 +19,7 @@ loginbutn.addEventListener("click", (e) => {
       window.localStorage["jwtToken"] = data.token;
 
       if (data.token) {
-        window.location.href = "/pages/dashboard.html";
+        window.location.href = "/My-brand/pages/dashboard.html";
       } else {
         alert("Invalid username or Password");
         window.location.href = "/pages/login.html";

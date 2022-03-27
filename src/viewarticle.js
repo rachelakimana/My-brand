@@ -50,7 +50,7 @@ function renderAticles(doc) {
   readMore.textContent = "Read More";
   readMore.addEventListener("click", (e) => {
     e.preventDefault();
-    location.href = `/pages/viewblog.html#${doc._id}`;
+    location.href = `/My-brand/pages/viewblog.html#${doc._id}`;
   });
 }
 
