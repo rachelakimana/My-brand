@@ -1,8 +1,8 @@
-window.onload = function () {
-  if (localStorage.getItem("jwtToken") === null) {
-    location.href = "/My-brand/pages/login.html";
-  }
-};
+// window.onload = function () {
+//   if (localStorage.getItem("jwtToken") === null) {
+//     location.href = "/My-brand/pages/login.html";
+//   }
+// };
 
 //variable to access database
 // const db = firestore.collection("Articles");
@@ -91,7 +91,7 @@ function renderAticles(doc) {
   iconupdate.addEventListener("click", (e) => {
     e.preventDefault();
     let id = doc._id;
-    location.href = `/pages/updateblog.html#${id}`;
+    location.href = `/My-brand/pages/updateblog.html#${id}`;
   });
 
   // // deleting data
