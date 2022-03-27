@@ -18,12 +18,14 @@ loginbutn.addEventListener("click", (e) => {
       console.log(data);
       window.localStorage["jwtToken"] = data.token;
 
-      if (data.token) {
-        window.location.href = "/My-brand/pages/dashboard.html";
-      } else {
-        alert("Invalid username or Password");
-        window.location.href = "/My-brand/pages/login.html";
-      }
+      window.location.href = "/My-brand/pages/dashboard.html";
+
+      // if (data.token) {
+      //   window.location.href = "/My-brand/pages/dashboard.html";
+      // } else {
+      //   alert("Invalid username or Password");
+      //   window.location.href = "/My-brand/pages/login.html";
+      // }
     });
 
   //sign the user in
