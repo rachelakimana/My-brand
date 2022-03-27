@@ -22,7 +22,7 @@ loginbutn.addEventListener("click", (e) => {
         window.location.href = "/My-brand/pages/dashboard.html";
       } else {
         alert("Invalid username or Password");
-        window.location.href = "/pages/login.html";
+        window.location.href = "/My-brand/pages/login.html";
       }
     });
 
