@@ -1,5 +1,5 @@
 //variable to access database
-const db = firestore.collection("Comments");
+// const db = firestore.collection("Comments");
 
 const commentContainer = document.querySelector(".commentcontainer");
 const ulComment = document.querySelector("#commentwrapper");

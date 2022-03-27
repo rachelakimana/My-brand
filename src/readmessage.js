@@ -1,5 +1,5 @@
 //variable to access database
-const db = firestore.collection("Messages");
+// const db = firestore.collection("Messages");
 
 const messageContainer = document.querySelector(".messagecontainer");
 const ulMessage = document.querySelector("#messagewrapper");

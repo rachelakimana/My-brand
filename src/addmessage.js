@@ -1,4 +1,4 @@
-const db = firestore.collection("Messages");
+// const db = firestore.collection("Messages");
 
 // get submit form
 let submitButton = document.getElementById("buttonsend");

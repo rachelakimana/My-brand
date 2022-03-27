@@ -1,4 +1,4 @@
-const db = firestore.collection("Articles");
+// const db = firestore.collection("Articles");
 const id = location.hash.slice(1);
 console.log(id);
 const title = document.getElementById("title");
