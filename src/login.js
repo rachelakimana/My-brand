@@ -20,12 +20,12 @@ loginbutn.addEventListener("click", (e) => {
 
       window.location.href = "/My-brand/pages/dashboard.html";
 
-      // if (data.token) {
-      //   window.location.href = "/My-brand/pages/dashboard.html";
-      // } else {
-      //   alert("Invalid username or Password");
-      //   window.location.href = "/My-brand/pages/login.html";
-      // }
+      if (data.token) {
+        window.location.href = "/My-brand/pages/dashboard.html";
+      } else {
+        alert("Invalid username or Password");
+        window.location.href = "/My-brand/pages/login.html";
+      }
     });
 
   //sign the user in
