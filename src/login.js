@@ -14,14 +14,14 @@ loginbutn.addEventListener("click", (e) => {
     body: JSON.stringify({ username: email.value, password: password.value }),
   })
     .then((response) => response.json())
-    .then(({ data }) => {
-      console.log(data);
+    .then((data) => {
+      console.log(data.token);
       window.localStorage["jwtToken"] = data.token;
-      if (!data.token) {
+      if (data.token) {
+        window.location.href = "/My-brand/pages/dashboard.html";
+      } else {
         alert("Invalid credentials");
         window.location.href = "/My-brand/pages/login.html";
-      } else {
-        window.location.href = "/My-brand/pages/dashboard.html";
       }
     });
 
