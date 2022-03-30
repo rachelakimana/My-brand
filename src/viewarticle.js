@@ -66,7 +66,7 @@ fetch("https://my-brand-website.herokuapp.com/api/v1/blogs")
   .then((response) => response.json())
   .then((Articles) => {
     console.log(Articles);
-    Articles.forEach((doc) => {
+    Articles.map((doc) => {
       renderAticles(doc);
     });
   });
