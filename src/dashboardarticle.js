@@ -1,8 +1,8 @@
-// window.onload = function () {
-//   if (localStorage.getItem("jwtToken") === null) {
-//     location.href = "/My-brand/pages/login.html";
-//   }
-// };
+window.onload = function () {
+  if (localStorage.getItem("jwtToken") === null) {
+    location.href = "/My-brand/pages/login.html";
+  }
+};
 
 //variable to access database
 // const db = firestore.collection("Articles");
@@ -105,8 +105,9 @@ function renderAticles(doc) {
 
 fetch("https://my-brand-website.herokuapp.com/api/v1/blogs")
   .then((response) => response.json())
-  .then((data) => {
-    data.forEach((doc) => {
+  .then(({ Articles }) => {
+    console.log(Articles);
+    Articles.map((doc) => {
       renderAticles(doc);
     });
   });
