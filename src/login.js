@@ -17,12 +17,12 @@ loginbutn.addEventListener("click", (e) => {
     .then((data) => {
       console.log(data);
       window.localStorage["jwtToken"] = data.token;
-      if (!data.token) {
-        alert("Invalid credentials");
-        window.location.href = "/My-brand/pages/login.html";
-      } else {
-        window.location.href = "/My-brand/pages/dashboard.html";
-      }
+      // if (!data.token) {
+      //   alert("Invalid credentials");
+      //   window.location.href = "/My-brand/pages/login.html";
+      // } else {
+      //   window.location.href = "/My-brand/pages/dashboard.html";
+      // }
     });
 
   //sign the user in
