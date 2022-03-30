@@ -6,7 +6,7 @@ const loginbutn = document.getElementById("loginbutton");
 loginbutn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  fetch("https://my-brand-website.herokuapp.com/api/user/login", {
+  fetch("https://my-brand-website.herokuapp.com/api/v1/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -17,11 +17,11 @@ loginbutn.addEventListener("click", (e) => {
     .then((data) => {
       console.log(data);
       window.localStorage["jwtToken"] = data.token;
-      if (data.token) {
-        window.location.href = "/My-brand/pages/dashboard.html";
-      } else {
-        alert("Invalid username or Password");
+      if (!data.token) {
+        alert("Invalid credentials");
         window.location.href = "/My-brand/pages/login.html";
+      } else {
+        window.location.href = "/My-brand/pages/dashboard.html";
       }
     });
 

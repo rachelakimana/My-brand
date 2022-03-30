@@ -70,7 +70,8 @@ function renderAticles(doc) {
   icondelete.addEventListener("click", (e) => {
     let id = doc._id;
     const activeToken = localStorage.getItem("jwtToken");
-    fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`, {
+
+    fetch(`https://my-brand-website.herokuapp.com/api/v1/blog/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -102,7 +103,7 @@ function renderAticles(doc) {
   // });
 }
 
-fetch("https://my-brand-website.herokuapp.com/api/blog")
+fetch("https://my-brand-website.herokuapp.com/api/v1/blogs")
   .then((response) => response.json())
   .then((data) => {
     data.forEach((doc) => {
