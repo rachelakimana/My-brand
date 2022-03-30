@@ -15,12 +15,13 @@ loginbutn.addEventListener("click", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       window.localStorage["jwtToken"] = data.token;
       if (data.token) {
         window.location.href = "/My-brand/pages/dashboard.html";
       } else {
+        console.log(data);
         alert(data.Message);
+
         window.location.href = "/My-brand/pages/login.html";
       }
     });
