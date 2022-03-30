@@ -15,7 +15,7 @@ loginbutn.addEventListener("click", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.token);
+      console.log(data);
       window.localStorage["jwtToken"] = data.token;
       if (data.token) {
         window.location.href = "/My-brand/pages/dashboard.html";
