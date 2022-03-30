@@ -77,7 +77,15 @@ function renderAticles(doc) {
         "Content-Type": "application/json",
         Authorization: `bearer ${activeToken}`,
       },
-    });
+    })
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        if (data.message) alert(data.message);
+      });
     if (activeToken) {
       alert("Article deleted");
       window.location.reload();
