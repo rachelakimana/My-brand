@@ -8,7 +8,7 @@ console.log(id);
 // console.log(id);
 // firestore.collection("Articles").doc(id);
 const activeToken = localStorage.getItem("jwtToken");
-fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`)
+fetch(`https://my-brand-website.herokuapp.com/api/v1/blog/${id}`)
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
@@ -19,7 +19,7 @@ fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`)
     let buttonupdate = document.getElementById("update");
     buttonupdate.addEventListener("click", (e) => {
       e.preventDefault();
-      fetch(`https://my-brand-website.herokuapp.com/api/blog/${id}`, {
+      fetch(`https://my-brand-website.herokuapp.com/api/v1/blog/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
