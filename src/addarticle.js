@@ -10,7 +10,7 @@ submitButton.addEventListener("click", (e) => {
 
   // get form values
   let title = document.getElementById("title").value;
-  let createdDate = document.getElementById("cdate").value;
+  // let createdDate = document.getElementById("cdate").value;
   let content = document.getElementById("content").value;
 
   // add blog
