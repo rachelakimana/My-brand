@@ -22,7 +22,6 @@ loginbutn.addEventListener("click", (e) => {
         alert(data.Message);
 
         console.log(typeof data);
-        window.location.href = "/My-brand/pages/login.html";
       }
     });
 
