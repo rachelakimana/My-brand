@@ -64,7 +64,7 @@ function renderAticles(doc) {
 // });
 fetch("https://my-brand-website.herokuapp.com/api/v1/blogs")
   .then((response) => response.json())
-  .then((Articles) => {
+  .then(({ Articles }) => {
     console.log(Articles);
     Articles.map((doc) => {
       renderAticles(doc);
