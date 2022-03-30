@@ -19,9 +19,9 @@ loginbutn.addEventListener("click", (e) => {
       if (data.token) {
         window.location.href = "/My-brand/pages/dashboard.html";
       } else {
-        console.log(data);
         alert(data.Message);
 
+        console.log(typeof data);
         window.location.href = "/My-brand/pages/login.html";
       }
     });
