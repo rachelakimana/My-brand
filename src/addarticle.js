@@ -15,7 +15,7 @@ submitButton.addEventListener("click", (e) => {
 
   // add blog
   const activeToken = localStorage.getItem("jwtToken");
-  fetch("https://my-brand-website.herokuapp.com/api/blog/add", {
+  fetch("https://my-brand-website.herokuapp.com/api/v1/blog/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
