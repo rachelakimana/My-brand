@@ -65,6 +65,7 @@ function renderAticles(doc) {
 fetch("https://my-brand-website.herokuapp.com/api/v1/blogs")
   .then((response) => response.json())
   .then((data) => {
+    console.log(data);
     data.forEach((doc) => {
       renderAticles(doc);
     });
