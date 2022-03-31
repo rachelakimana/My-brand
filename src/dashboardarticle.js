@@ -1,8 +1,8 @@
-window.onload = function () {
-  if (localStorage.getItem("jwtToken") === null) {
-    location.href = "/My-brand/pages/login.html";
-  }
-};
+// window.onload = function () {
+//   if (localStorage.getItem("jwtToken") === null) {
+//     location.href = "/My-brand/pages/login.html";
+//   }
+// };
 
 //variable to access database
 // const db = firestore.collection("Articles");
@@ -66,34 +66,47 @@ function renderAticles(doc) {
   iconupdate.className = "fa-solid fa-pen";
 
   // deleting data
+  // icondelete.addEventListener("click", (e) => {
+  //   model.style.display = "block";
+  //   let id = doc._id;
+  //   console.log(id);
+  // });
 
-  icondelete.addEventListener("click", (e) => {
-    let id = doc._id;
-    const activeToken = localStorage.getItem("jwtToken");
+  icondelete.addEventListener("click", myFunction);
 
-    fetch(`https://my-brand-website.herokuapp.com/api/v1/blog/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `bearer ${activeToken}`,
-      },
-    })
-      .then((response) => {
-        console.log(response);
-        return response.json();
+  function myFunction() {
+    if (
+      confirm("Confirm, Are you sure you want to delete this article ?") == true
+    ) {
+      let id = doc._id;
+      console.log(id);
+
+      fetch(`https://my-brand-website.herokuapp.com/api/v1/blog/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `bearer ${localStorage.getItem("jwtToken")}`,
+        },
       })
-      .then((data) => {
-        console.log(data);
-        if (data.message) alert(data.message);
-      });
-    if (activeToken) {
-      alert("Article deleted");
-      window.location.reload();
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          if (data.Message) alert(data.Message);
+          window.location.reload();
+        });
+    } else {
     }
-    if (!activeToken) {
-      alert("Action denied, you have first to login");
-    }
-  });
+
+    // if (activeToken) {
+    //   alert("Article deleted");
+    //   window.location.reload();
+    // }
+    // if (!activeToken) {
+    //   alert("Action denied, you have first to login");
+    //   window.location.reload();
+    // }
+  }
 
   // Udating data
 

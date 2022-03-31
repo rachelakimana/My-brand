@@ -15,19 +15,39 @@ submitButton.addEventListener("click", (e) => {
   var phoneNumber = document.getElementById("phonenumber").value;
   var message = document.getElementById("message").value;
   // save form data to firebase
-  db.doc()
-    .set({
+  fetch("https://my-brand-website.herokuapp.com/api/v1/message/add", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
       firstName: firstname,
       lastName: lastname,
-      email: email,
-      phone: phoneNumber,
+      emailAddress: email,
+      phoneNumber: phoneNumber,
       message: message,
+    }),
+  })
+    .then((response) => {
+      return response.json();
     })
-    .then(() => {
-      console.log("Data saved");
+    .then((data) => {
+      if (data.Message) alert(data.Message);
       window.location.reload();
-    })
-    .catch((error) => {
-      console.log(error);
     });
 });
+// db.doc()
+//   .set({
+//     firstName: firstname,
+//     lastName: lastname,
+//     email: email,
+//     phone: phoneNumber,
+//     message: message,
+//   })
+//   .then(() => {
+//     console.log("Data saved");
+//     window.location.reload();
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });

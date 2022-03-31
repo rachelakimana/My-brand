@@ -20,8 +20,6 @@ loginbutn.addEventListener("click", (e) => {
         window.location.href = "/My-brand/pages/dashboard.html";
       } else {
         alert(data.Message);
-
-        console.log(typeof data);
       }
     });
 

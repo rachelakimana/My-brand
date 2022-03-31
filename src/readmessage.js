@@ -41,28 +41,80 @@ function renderMessage(doc) {
   deletemesage.setAttribute("id", "trashicon");
 
   li.setAttribute("messageid", doc.id);
-  fname.textContent = doc.data().firstName;
-  lname.textContent = doc.data().lastName;
-  emailadress.textContent = doc.data().email;
-  phonenum.textContent = doc.data().phone;
-  message.textContent = doc.data().message;
+  fname.textContent = doc.firstName;
+  lname.textContent = doc.lastName;
+  emailadress.textContent = doc.emailAdress;
+  phonenum.textContent = doc.phoneNumber;
+  message.textContent = doc.message;
   icondelete.className = "fa-solid fa-trash-can";
 
   // deleting data
-  icondelete.addEventListener("click", (e) => {
-    e.stopPropagation();
-    //     let id = e.target.p.getAttribute("messageid");
-    let id = doc.id;
-    console.log(id);
-    firestore.collection("Messages").doc(id).delete();
-  });
+  icondelete.addEventListener("click", myFunction);
+
+  function myFunction() {
+    if (
+      confirm("Confirm, Are you sure you want to delete this message ?") == true
+    ) {
+      let id = doc._id;
+      console.log(id);
+
+      fetch(`https://my-brand-website.herokuapp.com/api/v1/message/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `bearer ${localStorage.getItem("jwtToken")}`,
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          if (data.Message) alert(data.Message);
+          window.location.reload();
+        });
+    } else {
+    }
+
+    // if (activeToken) {
+    //   alert("Article deleted");
+    //   window.location.reload();
+    // }
+    // if (!activeToken) {
+    //   alert("Action denied, you have first to login");
+    //   window.location.reload();
+    // }
+  }
+
+  // icondelete.addEventListener("click", (e) => {
+  //   e.stopPropagation();
+  //   //     let id = e.target.p.getAttribute("messageid");
+  //   let id = doc.id;
+  //   console.log(id);
+  //   firestore.collection("Messages").doc(id).delete();
+  // });
 }
 
-db.get().then((snapshot) => {
-  snapshot.docs.forEach((doc) => {
-    const docData = doc.data();
-    // console.log(docData);
-
-    renderMessage(doc);
+fetch("https://my-brand-website.herokuapp.com/api/v1/messages", {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `bearer ${localStorage.getItem("jwtToken")}`,
+  },
+})
+  .then((response) => {
+    return response.json();
+  })
+  .then(({ allMessages }) => {
+    console.log(allMessages);
+    allMessages.map((doc) => {
+      renderMessage(doc);
+    });
   });
-});
+// db.get().then((snapshot) => {
+//   snapshot.docs.forEach((doc) => {
+//     const docData = doc.data();
+//     // console.log(docData);
+
+//     renderMessage(doc);
+//   });
+// });
